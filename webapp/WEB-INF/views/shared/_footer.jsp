@@ -27,6 +27,7 @@
 					<li><a href="${pageContext.request.contextPath}/tutorial"><spring:message code="f_tutorial"/></a></li>
 					<li><a href="${pageContext.request.contextPath}/forum"><spring:message code="f_forum"/></a></li>
 					<li><a href="http://news.khmeracademy.org" target="_blank"><spring:message code="f_news"/></a></li>
+					<li><a href="http://expert.khmeracademy.org" target="_blank">Expert Database</a></li>
 				</ul>
 			</div>
 			

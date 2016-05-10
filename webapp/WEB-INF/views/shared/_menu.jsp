@@ -49,8 +49,33 @@
 			<li class="parent">
 				<a href="${pageContext.request.contextPath}/forum"><spring:message code="m_forum"/></a>
 			</li>
-			<li class="parent">
+			
+			<%-- <li class="parent">
 				<a href="http://news.khmeracademy.org" target="_blank"><spring:message code="m_news"/></a>
+			</li> --%>
+			
+			<li class="parent">
+				<a href="#">Other Service</a>
+				<ul class="sub-menus">
+					<li class="sub-list">
+						<a href="http://news.khmeracademy.org" target="_blank">News</a>
+					</li>
+					<li class="sub-list">
+						<a href="http://memo.khmeracademy.org/" target="_blank">Memo</a>
+					</li>
+					<li class="sub-list">
+						<a href="http://expert.khmeracademy.org/" target="_blank">Expert Database</a>
+					</li>
+					<li class="sub-list">
+						<a href="http://kshrd.com.kh/" target="_blank">KSHRD</a>
+					</li>
+					<li class="sub-list">
+						<a href="${pageContext.request.contextPath}/website">Website Collection</a>
+					</li>
+					<li class="sub-list">
+						<a href="${pageContext.request.contextPath}/traffic/default">Live Traffic</a>
+					</li>
+				</ul>
 			</li>
 			
 			<li class="parent">

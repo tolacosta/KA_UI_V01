@@ -6,7 +6,7 @@
 <html lang="en">
 	<head>
 
-		<title>Main Page |Khmer Aacademy</title>
+		<title>Main Page | Khmer Aacademy</title>
 		<jsp:include page="shared/_header.jsp" />
 		
 		
@@ -422,6 +422,126 @@
 																
 																					
 											 </div> 	
+											 
+											 
+											 
+											 <!-- Website Hub -->
+											 <div class="panel panel-primary panel-square panel-no-border">
+														<div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
+															  <a href="${pageContext.request.contextPath}/website" target="_blank" style=" float: left;color: white;"><h3 class="panel-title">វេបសាយ</h3></a>
+															  <a href="${pageContext.request.contextPath}/website" target="_blank" class="btn btn-default btn-xs" id="btLoadMore" style="float: right;">ច្រើនទៀត</a>
+														</div>
+												
+														 <div class="panel with-nav-tabs panel-default">
+															  <div class="panel-heading" style="background:white">
+																<ul class="nav nav-tabs">
+																	<li class="active"><a href="#w-panel-recent" data-toggle="tab" class="wTab" data-mid="empty" data-id="getWRecent" aria-expanded="true">Recent</a></li>
+																	<li class=""><a href="#w-panel-news" data-toggle="tab" class="wTab" data-mid="MQ==" data-id="getWNews" aria-expanded="false">News</a></li>
+																	<li class=""><a href="#w-panel-education" data-toggle="tab" class="wTab" data-mid="Ng==" data-id="getWEducation" aria-expanded="false">Education</a></li>
+																    <li class=""><a href="#w-panel-ecommerce" data-toggle="tab" class="wTab" data-mid="MjM=" data-id="getWECommerce" aria-expanded="false">E-Commerce</a></li>
+																    <li class=""><a href="#w-panel-university" data-toggle="tab" class="wTab" data-mid="MQ==" data-id="getWUniversity" aria-expanded="false">University</a></li>
+																	<li class=""><a href="#w-panel-bank" data-toggle="tab" class="wTab" data-mid="MTc=" data-id="getBank" aria-expanded="false">Bank</a></li>
+																	<li class=""><a href="#w-panel-government" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWGovernment" aria-expanded="false">Government</a></li>
+																	<li class=""><a href="#w-panel-embassy" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWEmbassy" aria-expanded="false">Embassy</a></li>
+																	<li class=""><a href="#w-panel-hotel" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWHotel" aria-expanded="false">Hotel</a></li>
+																	<li class=""><a href="#w-panel-job" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWJob" aria-expanded="false">Job</a></li>
+																	<li class=""><a href="#w-panel-company" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWCompany" aria-expanded="false">Company</a></li>
+																	<li class=""><a href="#w-panel-entertainment" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWEntertainment" aria-expanded="false">Entertainment</a></li>
+																	<li class=""><a href="${pageContext.request.contextPath}/website"> Other</a></li>
+																</ul>
+															  </div>
+																<div id="panel-collapse-1" class="collapse in" aria-expanded="true">
+																	<div class="panel-body">
+																		
+																		<div class="tab-content">
+																			<div class="tab-pane fade active in" id="w-panel-recent">
+																					<div id="getWRecent" class="row" style="height:  auto; overflow: hidden;">
+																					
+																						<div id="w-loading" class="loading text-center" ><img src="${pageContext.request.contextPath}/resources/assets/img/loading.gif"></div>
+																					
+																						<%-- <div class="col-md-3 col-xs-6" style="height:50px;display: -webkit-box;">		
+																								<div>
+																									<a href="${pageContext.request.contextPath}/elearning/playvideo?v={{= videoId }}&playlist={{= playlistId }}">
+																											<img width="40px" height="40px" src="{{= thumbnailUrl }}" alt="...">
+																									</a>
+																								</div>
+																								<div class="caption text-left  shortenString" style="padding: 10px;width:80%;padding-top: 5px;">                       
+																										<p class="small shortenString">                       
+																												<a class="no-underline" href="${pageContext.request.contextPath}/elearning/playvideo?v={{= videoId }}&playlist={{= playlistId }}" style="font-size: 15px;color: #4D4D4D;">                         
+																														<b>ក្រសួងទេសចរណ៍</b>                  
+																												</a>   
+																										</p>              
+																								</div>
+																						</div> --%>
+																						
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-news">
+																					<div id="getWNews" class="row" style="height:  auto; overflow: hidden;">
+																  						w-panel-news
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-education">
+																					<div id="getWEducation" class="row" style="height:  auto;overflow: hidden;">
+															  							w-panel-education
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-ecommerce">
+																					<div id="getWECommerce" class="row" style="height:  auto;overflow: hidden;">
+															  							w-panel-ecommerce
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-university">
+																					<div id="getWUniversity" class="row" style="height:  auto; overflow: hidden;">
+															  							w-panel-university
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-bank">
+																					<div id="getBank" class="row" style="height:  auto;overflow: hidden;">
+															  							w-panel-bank
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-government">
+																					<div id="getWGovernment" class="row" style="height:  auto; overflow: hidden;">
+															  							#w-panel-government
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-embassy">
+																					<div id="getWEmbassy" class="row" style="height:  auto; overflow: hidden;">
+															  							#w-panel-embassy
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-hotel">
+																					<div id="getWHotel" class="row" style="height:  auto; overflow: hidden;">
+															  							#w-panel-hotel
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-job">
+																					<div id="getWJob" class="row" style="height:  auto; overflow: hidden;">
+															  							#w-panel-job
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-company">
+																					<div id="getWCompany" class="row" style="height:  auto; overflow: hidden;">
+															  							##w-panel-company
+																					</div>
+																			</div>
+																			<div class="tab-pane fade" id="w-panel-entertainment">
+																					<div id="getWEntertainment" class="row" style="height:  auto; overflow: hidden;">
+															  							#w-panel-entertainment
+																					</div>
+																			</div>
+																			
+																		</div>
+																		
+																					
+																	</div>
+																</div>
+															</div>
+			            								
+												</div>
+												<!--  End Website Hub -->
+												
 									</div>	
 											
 									<div class="col-lg-4">
@@ -539,6 +659,109 @@
 																					
 											 </div> 	
 											<!-- End Forum -->
+											
+											<!--  Live Camera -->
+											<div class="panel panel-primary panel-square panel-no-border">
+																
+															  <div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
+																	<a href="${pageContext.request.contextPath}/traffic/default" target="_blank" style=" float: left;color: white;"><h3 class="panel-title">កាមេរ៉ាផ្សាយផ្ទាល់</h3></a>
+															  </div>
+																  
+																<div class="inbox"  style="padding: 15px;    height:  auto;  border: 1px solid #D5DAE0;">	
+																
+																		<div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/7-makara-skybridge">   
+																				       <i class="fa fa-location-arrow"></i> ស្ពានអាកាស ៧មករា         
+																				  </a>      
+																		    </span>      
+																		 </div>  
+																		 
+																		 <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/kbal-thnol">   
+																				       <i class="fa fa-location-arrow"></i> ស្ពានអាកាសក្បាលថ្នល់
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		 
+																		 <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/riverside">   
+																				       <i class="fa fa-location-arrow"></i> ផ្លូវមាត់ទន្លេ
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		 
+																		 <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/monivong">   
+																				       <i class="fa fa-location-arrow"></i> ស្ដុបព្រះមុនីវង្ស
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		 
+																		 <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/intercon">   
+																				       <i class="fa fa-location-arrow"></i> ស្ដុប Intercon
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		 
+																		 <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/camko-cycle">   
+																				       <i class="fa fa-location-arrow"></i> រង្វង់មូលកាំកូស៊ីធី
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		 
+																		 <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/2013-09-30-03-12-40">   
+																				       <i class="fa fa-location-arrow"></i> ស្ដុបទួលគោក
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		 
+																		  <div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/chaom-chao">   
+																				       <i class="fa fa-location-arrow"></i> រង្វង់មូលចោមចៅ
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		
+																		<div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/steung-meanchey">   
+																				       <i class="fa fa-location-arrow"></i> ស្ពានអាកាសស្ទឹងមានជ័យ
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		
+																		<div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/olympic">   
+																				       <i class="fa fa-location-arrow"></i> ស្ដុបអូឡាំពិក
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		
+																		<div class="caption text-left shortenString" style="border-bottom: 1px solid  #D5DAE0;padding-top:10px;padding-bottom: 10px;">      
+																			<span class="small ">         
+																				 <a style="font-size: 15px;" target="_blank"  class="no-underline ka-question" href="${pageContext.request.contextPath}/traffic/ratana-plaza">   
+																				       <i class="fa fa-location-arrow"></i> រតនាផ្លាហ្សា
+																				  </a>      
+																		    </span>      
+																		 </div>
+																		
+																</div>	
+																
+																					
+											 </div> 	
+											<!-- End Forum -->
 										 
 									</div>
 								</div>
@@ -569,7 +792,7 @@
 		
 		
 		 <script id="tlistcategory_tmpl" type="text/x-jquery-tmpl">
-				<div class="col-sm-3" style="width: 190px; padding-right: 0px;" >      
+				<div class="col-sm-3 col-xs-6" style="padding-right: 0px;" >      
 												<a target="_blank" href="${pageContext.request.contextPath}/tutorial/detail/{{= categoryId}}">
 													  	<div class="the-box no-border full store-item text-center"> 
 													  	     <div class="the-box bg-default no-margin no-border item-des" style="border: 1px solid #D5DAE0; padding: 14px;">        
@@ -591,22 +814,23 @@
 				</div> 
 		</script>
 		
-		
-					<%-- <div class="col-md-3" style="width: 50%;height:70px;display: -webkit-box;">	
-							<div style="width:70px;height:50px">
-								<a href="${pageContext.request.contextPath}/elearning/playvideo?v={{= videoId }}&playlist={{= playlistId }}">
-										<img   src="{{= thumbnailUrl }}" alt="{{= playlistName }}" class="img-responsive">
-								</a>
-							</div>
-							<div class="caption text-left  shortenString" style="padding: 10px;width:80%;padding-top: 0px;">                       
-									<p class="small shortenString">                       
-											<a class="no-underline" href="${pageContext.request.contextPath}/elearning/playvideo?v={{= videoId }}&playlist={{= playlistId }}" style="color:#656D78;font-size: 17px;">                         
-													<b>{{= playlistName }}</b>                  
-											</a>   
-									</p>               
-							</div>
-					</div> --%>
-					
+		<script id="website_tmpl" type="text/x-jquery-tmpl">
+				<div class="col-md-3 col-xs-6" style="height:55px;display: -webkit-box;">		
+					<div>
+						<a href="${pageContext.request.contextPath}/website/view/{{= id }}?url={{= link }}" target="_blank">
+							<img width="40px" height="40px" src="{{= logoUrl }}" alt="...">
+						</a>
+					</div>
+					<div class="caption text-left  shortenString" style="padding: 10px;width:80%;padding-top: 5px;">                       
+						<p class="small shortenString">                       
+							<a target="_blank" class="no-underline" href="${pageContext.request.contextPath}/website/view/{{= id }}?url={{= link }}" style="font-size: 14px;color: #4D4D4D;">                         
+								{{= title }}               
+							</a>   
+						</p>              
+					</div>
+				</div>
+		</script>	
+			
 		 <script id="elearning_tmpl" type="text/x-jquery-tmpl">
 					
 
@@ -771,8 +995,31 @@
 					});	
 		    	};
 				
-				
-				
+		    	//Website-block	
+		    	var wID="getWRecent";
+		    	showWebsite = function(cate){ 
+		    		$.ajax({
+		    			url :"${pageContext.request.contextPath}/rest/website/findAllWebsiteByCategoryId/"+cate+"?page=1&item=10",
+						method: 'GET',
+						success:function(data){
+							$("#website_tmpl").tmpl(data.LIST_WEBSTIE).appendTo("#"+wID);
+							 $("#w-loading").hide();
+						}
+					});	
+		    	};
+		    	
+		    	$(document).on('click',".wTab" , function(){  
+					 if ($("#"+$(this).data("id")).find('div').length > 0) { 
+						 $("#w-loading").hide();
+						 return; 
+					  }else{
+						  $("#w-loading").show();		
+						  wID = $(this).data("id");
+						  showWebsite($(this).data("mid"));
+					  }
+					 
+	    		});
+		    	// End Website-block	
 				
 				$(document).on('click',".newsTab" , function(){  
 					 if ($("#"+$(this).data("id")).find('div').length > 0) { 
@@ -799,20 +1046,25 @@
 					  }
 					 
 	    		});
+				
+				
+		    	
 		    	
 		    	
 		    	
 				
 		    	var eID="getRecent";
+		    	var wID="getWRecent";
 				showMainPageData = function(){ 
 		    		$.ajax({
 		    			url :"${pageContext.request.contextPath}/rest/elearning/main_page",
 						method: 'GET',
 						success:function(data){
-// 							console.log(data);
+							console.log(data);
 							$("#elearning_tmpl").tmpl(data.KA.LIST_COURSE).appendTo("#"+eID);
 							$("#tlistcategory_tmpl").tmpl(data.KA.LIST_CATEGORIES).appendTo("#listcategory");
 							$("#question_tmpl").tmpl(data.KA.LIST_QUESTION).appendTo("#getQuestion");
+							$("#website_tmpl").tmpl(data.KA.LIST_WEBSTIE).appendTo("#"+wID);
 							if(data.STATUS_AKN == true){
 								displayNews(data.KEY ,data.NEWS.RESPONSE_DATA);							
 							}
