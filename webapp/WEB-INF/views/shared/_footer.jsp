@@ -371,7 +371,7 @@ END PAGE
 												</div>
 												<div class="modal-body" >
 													
-                                     				<a href="#" id="dwnApp" class="btn btn-success">Download Mobile Application</a>
+                                     				<a href="#" id="dwnApp" class="btn btn-success">Please Download Mobile Application</a>
                                    						
 												</div>
 											</div>

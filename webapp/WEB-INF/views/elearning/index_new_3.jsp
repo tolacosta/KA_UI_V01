@@ -327,6 +327,18 @@
 			});
 			    
 	    </script>
+	    
+	    
+	    <script type="text/javascript">
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	   			$("#p-IfMobile").bPopup();
+	   			if(/Android/i.test(navigator.userAgent) ) {
+		   			$("#dwnApp").attr("href","https://play.google.com/store/apps/details?id=org.khmeracademy");
+		   		}else if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+		   			$("#dwnApp").attr("href","https://itunes.apple.com/kh/app/khmer-academy/id1082906587?mt=8");
+		   		}
+	   		}
+		</script>
 		
 	</body>
 </html>

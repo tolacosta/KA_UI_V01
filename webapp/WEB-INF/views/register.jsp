@@ -27,6 +27,21 @@
 		
 		<div class="container ka-container" >
 	
+	
+						<div class="col-sm-6">
+							<div class="the-box bg-default no-border" id="fbDiv" style="display:none">
+							
+								<div class="alert alert-default  square fade in alert-dismissable">
+									<strong class="alert-link"><spring:message code="rp_sign_up_with_facebook"/></strong>
+								</div>
+								
+								<button onclick="Login()" style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook"></i> Facebook</button>
+								
+									
+							</div><!-- /.the-box .bg-danger .no-border-->
+						</div>
+					
+					
 						<div class="col-sm-6">
 							<div class="the-box bg-default no-border">
 							
@@ -113,26 +128,6 @@
 						</div>
 						
 						
-						
-						
-						
-						<div class="col-sm-6">
-							<div class="the-box bg-default no-border" id="fbDiv" style="display:none">
-							
-								<div class="alert alert-default  square fade in alert-dismissable">
-									<strong class="alert-link"><spring:message code="rp_sign_up_with_facebook"/></strong>
-								</div>
-								
-								<button onclick="Login()" style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook"></i> Facebook</button>
-								
-									
-							</div><!-- /.the-box .bg-danger .no-border-->
-						</div>
-			
-			
-										
-										
-			
 						
 		</div>
 		

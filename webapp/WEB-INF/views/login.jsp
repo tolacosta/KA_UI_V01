@@ -27,6 +27,24 @@
 		
 		<div class="container ka-container" >
 	
+						
+						
+						
+						
+						
+						
+						<div class="col-sm-6">
+							<div class="the-box bg-default no-border" id="fbDiv" style="display:none">
+							
+								<div class="alert alert-default  square fade in alert-dismissable">
+									<strong class="alert-link"><spring:message code="lp_loing_with_facebook"/></strong>
+								</div>
+								
+								<button onclick="Login()" style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook"></i> Facebook</button>
+									
+							</div><!-- /.the-box .bg-danger .no-border-->
+						</div>
+						
 						<div class="col-sm-6">
 							<div class="the-box bg-default no-border">
 							
@@ -91,22 +109,6 @@
 								
 							</div><!-- /.the-box .bg-danger .no-border-->
 						</div>
-						
-						
-						
-						
-						
-						<div class="col-sm-6">
-							<div class="the-box bg-default no-border" id="fbDiv" style="display:none">
-							
-								<div class="alert alert-default  square fade in alert-dismissable">
-									<strong class="alert-link"><spring:message code="lp_loing_with_facebook"/></strong>
-								</div>
-								
-								<button onclick="Login()" style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook"></i> Facebook</button>
-									
-							</div><!-- /.the-box .bg-danger .no-border-->
-						</div>
 			
 			
 										
@@ -134,7 +136,16 @@
 		</script>
 		  
 		  
-		  
+		<script type="text/javascript">
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	   			$("#p-IfMobile").bPopup();
+	   			if(/Android/i.test(navigator.userAgent) ) {
+		   			$("#dwnApp").attr("href","https://play.google.com/store/apps/details?id=org.khmeracademy");
+		   		}else if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+		   			$("#dwnApp").attr("href","https://itunes.apple.com/kh/app/khmer-academy/id1082906587?mt=8");
+		   		}
+	   		}
+		</script>  
 		  
 	</body>
 </html>

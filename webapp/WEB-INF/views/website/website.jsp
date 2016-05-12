@@ -114,13 +114,13 @@
 		</script>
 		
 		<script id="website_tmpl" type="text/x-jquery-tmpl">
-				<div class="col-md-3 col-xs-6" style="height:60px;display: -webkit-box;">		
+				<div class="col-md-3 col-xs-6" style="height:100px;display: -webkit-box;">		
 					<div>
 						<a href="${pageContext.request.contextPath}/website/view/{{= id }}?url={{= link }}" target="_blank">
-							<img width="40px" height="40px" src="{{= logoUrl }}" alt="...">
+							<img width="60px" height="60px" src="{{= logoUrl }}" alt="...">
 						</a>
 					</div>
-					<div class="caption text-left  shortenString" style="padding: 10px;width:80%;padding-top: 5px;">                       
+					<div class="caption text-left  shortenString" style="padding: 10px;width:80%;padding-top: 17px;">                       
 						<p class="small shortenString">                       
 							<a target="_blank" class="no-underline" href="${pageContext.request.contextPath}/website/view/{{= id }}?url={{= link }}" style="font-size: 14px;color: #4D4D4D;">                         
 								{{= title }}               

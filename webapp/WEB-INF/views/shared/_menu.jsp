@@ -55,7 +55,7 @@
 			</li> --%>
 			
 			<li class="parent">
-				<a href="#">Other Service</a>
+				<a href="#">Service</a>
 				<ul class="sub-menus">
 					<li class="sub-list">
 						<a href="http://news.khmeracademy.org" target="_blank">News</a>
@@ -71,9 +71,6 @@
 					</li>
 					<li class="sub-list">
 						<a href="${pageContext.request.contextPath}/website">Website Collection</a>
-					</li>
-					<li class="sub-list">
-						<a href="${pageContext.request.contextPath}/traffic/default">Live Traffic</a>
 					</li>
 				</ul>
 			</li>
