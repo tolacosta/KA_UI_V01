@@ -1,13 +1,18 @@
 window.fbAsyncInit = function() {
 			FB.init({
-			      //appId      : '733594286732881', //'1720375071565906',
-			     // TEST 
-				  //appId :550152515085476 ,\
-			      appId: 157712197964057 ,
+//			      appId      : '733594286732881', // KSHRD
+//			      version    : 'v2.1' , 
+			      
+			       appId: 157712197964057 , // KhmerAcademy
+			       version    : 'v2.6' , // KhmerAcademy
+				
+//			       appId: 793854937411804 , // Khmer Academy
+//			       version    : 'v2.6' , // Khmer Academy
+			      
 			      status : true, // check login status
 			      cookie : true, // enable cookies to allow the server to access the session
-			      xfbml  : true,  // parse XFBML
-			      version    : 'v2.6' // 'v2.1'
+			      xfbml  : true  // parse XFBML
+			     
 			    });
 		     
 			/*FB.getLoginStatus(function(response) {

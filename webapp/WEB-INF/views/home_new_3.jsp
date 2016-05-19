@@ -288,7 +288,7 @@
 											
 											
 											<!--  KSHRD -->
-											<div class="panel panel-primary panel-square panel-no-border">
+											<%-- <div class="panel panel-primary panel-square panel-no-border">
 																
 															  <div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
 																	<a href="http://kshrd.com.kh/"  target="_blank" style=" float: left;color: white;"><h3 class="panel-title">មជ្ឍមណ្ឌលកូរ៉េសហ្វវែរអេចអឌី</h3></a>
@@ -421,14 +421,14 @@
 																</div>	
 																
 																					
-											 </div> 	
+											 </div>  --%>	
 											 
 											 
 											 
 											 <!-- Website Hub -->
 											 <div class="panel panel-primary panel-square panel-no-border">
 														<div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
-															  <a href="${pageContext.request.contextPath}/website" target="_blank" style=" float: left;color: white;"><h3 class="panel-title">វេបសាយ</h3></a>
+															  <a href="${pageContext.request.contextPath}/website" target="_blank" style=" float: left;color: white;"><h3 class="panel-title">តំណភ្ជាប់</h3></a>
 															  <a href="${pageContext.request.contextPath}/website" target="_blank" class="btn btn-default btn-xs" id="btLoadMore" style="float: right;">ច្រើនទៀត</a>
 														</div>
 												
@@ -437,27 +437,32 @@
 																<ul class="nav nav-tabs">
 																	<li class="active"><a href="#w-panel-recent" data-toggle="tab" class="wTab" data-mid="empty" data-id="getWRecent" aria-expanded="true">Recent</a></li>
 																	<li class=""><a href="#w-panel-news" data-toggle="tab" class="wTab" data-mid="MQ==" data-id="getWNews" aria-expanded="false">News</a></li>
-																	<li class=""><a href="#w-panel-education" data-toggle="tab" class="wTab" data-mid="Ng==" data-id="getWEducation" aria-expanded="false">Education</a></li>
-																    <li class=""><a href="#w-panel-ecommerce" data-toggle="tab" class="wTab" data-mid="MjM=" data-id="getWECommerce" aria-expanded="false">E-Commerce</a></li>
-																    <li class=""><a href="#w-panel-university" data-toggle="tab" class="wTab" data-mid="MQ==" data-id="getWUniversity" aria-expanded="false">University</a></li>
-																	<li class=""><a href="#w-panel-bank" data-toggle="tab" class="wTab" data-mid="MTc=" data-id="getBank" aria-expanded="false">Bank</a></li>
-																	<li class=""><a href="#w-panel-government" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWGovernment" aria-expanded="false">Government</a></li>
-																	<li class=""><a href="#w-panel-embassy" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWEmbassy" aria-expanded="false">Embassy</a></li>
-																	<li class=""><a href="#w-panel-hotel" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWHotel" aria-expanded="false">Hotel</a></li>
-																	<li class=""><a href="#w-panel-job" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWJob" aria-expanded="false">Job</a></li>
-																	<li class=""><a href="#w-panel-company" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWCompany" aria-expanded="false">Company</a></li>
-																	<li class=""><a href="#w-panel-entertainment" data-toggle="tab" class="wTab" data-mid="MjE=" data-id="getWEntertainment" aria-expanded="false">Entertainment</a></li>
+																	<li class=""><a href="#w-panel-education" data-toggle="tab" class="wTab" data-mid="NQ==" data-id="getWEducation" aria-expanded="false">Education</a></li>
+																    <li class=""><a href="#w-panel-ecommerce" data-toggle="tab" class="wTab" data-mid="OA==" data-id="getWECommerce" aria-expanded="false">E-Commerce</a></li>
+																    <li class=""><a href="#w-panel-university" data-toggle="tab" class="wTab" data-mid="NA==" data-id="getWUniversity" aria-expanded="false">University</a></li>
+																	<li class=""><a href="#w-panel-bank" data-toggle="tab" class="wTab" data-mid="Nw==" data-id="getBank" aria-expanded="false">Bank</a></li>
+																	<li class=""><a href="#w-panel-government" data-toggle="tab" class="wTab" data-mid="Mg==" data-id="getWGovernment" aria-expanded="false">Government</a></li>
+																	<li class=""><a href="#w-panel-embassy" data-toggle="tab" class="wTab" data-mid="MTE=" data-id="getWEmbassy" aria-expanded="false">Embassy</a></li>
+																	<li class=""><a href="#w-panel-hotel" data-toggle="tab" class="wTab" data-mid="MTA=" data-id="getWHotel" aria-expanded="false">Hotel</a></li>
+																	<li class=""><a href="#w-panel-job" data-toggle="tab" class="wTab" data-mid="OQ==" data-id="getWJob" aria-expanded="false">Job</a></li>
+																	<li class=""><a href="#w-panel-company" data-toggle="tab" class="wTab" data-mid="Ng==" data-id="getWCompany" aria-expanded="false">Company</a></li>
+																	<!-- <li class=""><a href="#w-panel-entertainment" data-toggle="tab" class="wTab" data-mid="Mw==" data-id="getWEntertainment" aria-expanded="false">Entertainment</a></li> -->
 																	<li class=""><a href="${pageContext.request.contextPath}/website"> Other</a></li>
 																</ul>
 															  </div>
 																<div id="panel-collapse-1" class="collapse in" aria-expanded="true">
+																
+																
 																	<div class="panel-body">
+																		
+																	<div id="w-loading" class="loading text-center" ><img src="${pageContext.request.contextPath}/resources/assets/img/loading.gif"></div>
+																		
 																		
 																		<div class="tab-content">
 																			<div class="tab-pane fade active in" id="w-panel-recent">
 																					<div id="getWRecent" class="row" style="height:  auto; overflow: hidden;">
 																					
-																						<div id="w-loading" class="loading text-center" ><img src="${pageContext.request.contextPath}/resources/assets/img/loading.gif"></div>
+																						
 																					
 																						<%-- <div class="col-md-3 col-xs-6" style="height:50px;display: -webkit-box;">		
 																								<div>
@@ -478,57 +483,52 @@
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-news">
 																					<div id="getWNews" class="row" style="height:  auto; overflow: hidden;">
-																  						w-panel-news
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-education">
 																					<div id="getWEducation" class="row" style="height:  auto;overflow: hidden;">
-															  							w-panel-education
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-ecommerce">
 																					<div id="getWECommerce" class="row" style="height:  auto;overflow: hidden;">
-															  							w-panel-ecommerce
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-university">
 																					<div id="getWUniversity" class="row" style="height:  auto; overflow: hidden;">
-															  							w-panel-university
+															  							
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-bank">
 																					<div id="getBank" class="row" style="height:  auto;overflow: hidden;">
-															  							w-panel-bank
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-government">
 																					<div id="getWGovernment" class="row" style="height:  auto; overflow: hidden;">
-															  							#w-panel-government
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-embassy">
 																					<div id="getWEmbassy" class="row" style="height:  auto; overflow: hidden;">
-															  							#w-panel-embassy
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-hotel">
 																					<div id="getWHotel" class="row" style="height:  auto; overflow: hidden;">
-															  							#w-panel-hotel
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-job">
 																					<div id="getWJob" class="row" style="height:  auto; overflow: hidden;">
-															  							#w-panel-job
+
 																					</div>
 																			</div>
 																			<div class="tab-pane fade" id="w-panel-company">
 																					<div id="getWCompany" class="row" style="height:  auto; overflow: hidden;">
-															  							##w-panel-company
-																					</div>
-																			</div>
-																			<div class="tab-pane fade" id="w-panel-entertainment">
-																					<div id="getWEntertainment" class="row" style="height:  auto; overflow: hidden;">
-															  							#w-panel-entertainment
+
 																					</div>
 																			</div>
 																			
@@ -661,7 +661,7 @@
 											<!-- End Forum -->
 											
 											<!--  Live Camera -->
-											<div class="panel panel-primary panel-square panel-no-border">
+											<%-- <div class="panel panel-primary panel-square panel-no-border">
 																
 															  <div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
 																	<a href="${pageContext.request.contextPath}/traffic/default" target="_blank" style=" float: left;color: white;"><h3 class="panel-title">កាមេរ៉ាផ្សាយផ្ទាល់</h3></a>
@@ -760,7 +760,7 @@
 																</div>	
 																
 																					
-											 </div> 	
+											 </div>  --%>	
 											<!-- End Forum -->
 										 
 									</div>
@@ -999,9 +999,10 @@
 		    	var wID="getWRecent";
 		    	showWebsite = function(cate){ 
 		    		$.ajax({
-		    			url :"${pageContext.request.contextPath}/rest/website/findAllWebsiteByCategoryId/"+cate+"?page=1&item=10",
+		    			url :"${pageContext.request.contextPath}/rest/website/findAllWebsiteByCategoryId/"+cate+"?page=1&item=20",
 						method: 'GET',
 						success:function(data){
+							console.log(data);
 							$("#website_tmpl").tmpl(data.LIST_WEBSTIE).appendTo("#"+wID);
 							 $("#w-loading").hide();
 						}

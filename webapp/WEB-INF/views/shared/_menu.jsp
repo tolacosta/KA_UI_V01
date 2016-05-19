@@ -50,11 +50,11 @@
 				<a href="${pageContext.request.contextPath}/forum"><spring:message code="m_forum"/></a>
 			</li>
 			
-			<%-- <li class="parent">
-				<a href="http://news.khmeracademy.org" target="_blank"><spring:message code="m_news"/></a>
-			</li> --%>
-			
 			<li class="parent">
+				<a href="http://news.khmeracademy.org" target="_blank"><spring:message code="m_news"/></a>
+			</li> 
+			
+			<%-- <li class="parent">
 				<a href="#">Service</a>
 				<ul class="sub-menus">
 					<li class="sub-list">
@@ -73,7 +73,7 @@
 						<a href="${pageContext.request.contextPath}/website">Website Collection</a>
 					</li>
 				</ul>
-			</li>
+			</li> --%>
 			
 			<li class="parent">
 				<a href="http://www.moeys.gov.kh" target="_blank"><spring:message code="m_moeys"/></a>

@@ -6,7 +6,7 @@
 <html lang="en">
 	<head>
 
-		<title>Website | Khmer Aacademy</title>
+		<title>Link | Khmer Aacademy</title>
 		<jsp:include page="../shared/_header.jsp" />
 		
 		
@@ -51,7 +51,7 @@
 												
 												<div class="r-loading text-center" ><img src="${pageContext.request.contextPath}/resources/assets/img/loading.gif"></div>
 									            
-									            					  <div class="panel panel-primary filter">
+									            					  <div id="div-all" class="panel panel-primary filter" style="display:none">
 																		  <div class="panel-heading" style="background:#F5F7FA;">
 																			<h3 class="panel-title">
 																				<a  id="findWeb" class="block-collapse collapsed" data-id="empty" style="color:#434a54;" href="#All">
@@ -143,14 +143,19 @@
 							method: 'GET',
 							success:function(data){
 								console.log(data);
+								$("#div-all").show();
 								$("#category_tmpl").tmpl(data.LIST_CATEGORY).appendTo("#getCategory");
 								$(".r-loading").hide();
 							}
 						});	
 			    };
 			    
+			    var progress = null;
 			    showWebsite = function(cate,page){ 
-		    		$.ajax({
+			    	if (progress) {
+			    		progress.abort();
+			    	}
+			    	progress  = $.ajax({
 		    			url :"${pageContext.request.contextPath}/rest/website/findAllWebsiteByCategoryId/"+cate+"?page="+page+"&item=20",
 						method: 'GET',
 						success:function(data){
@@ -168,7 +173,8 @@
 			    	
 		   		$(document).on('click',"#findWeb" , function(){  
 					page = 1;
-					cate = $(this).data("id");
+					cate = $(this).data("id"); 
+					$("title").text($(this).text().trim() + " Link | Khmer Academy");
 					$("#getWebsite").empty();
 					$(".l-loading").show();
 					showWebsite(cate,1);
