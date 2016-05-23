@@ -110,12 +110,12 @@
 				            	<div class="row" style="margin-bottom: 0px;padding: 15px; margin-top: -20px;">
 											
 												<div class="owl-carousel" id="owl-banner">
-												    <div class="item">
+												    <%-- <div class="item">
 												    	<a href="#"><img src='${pageContext.request.contextPath}/resources/assets/img/banner/KA_MoEYS.jpg' alt='' class="img-responsive"></a>
-												    </div>
-													<div class='item'>
+												    </div> --%>
+													<%-- <div class='item'>
 												    	<a href="${pageContext.request.contextPath}/kshrd/shortcourse/"><img src='${pageContext.request.contextPath}/resources/assets/img/banner/short_course.jpg' alt='' class="img-responsive"></a>
-													</div>
+													</div> --%>
 													<div class='item'>
 												    	<a href="http://kshrd.com.kh/" target="_blank"><img src='${pageContext.request.contextPath}/resources/assets/img/banner/4th.jpg' alt='' class="img-responsive"></a>
 													</div>
