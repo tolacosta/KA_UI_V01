@@ -112,7 +112,7 @@ END PAGE
 					
 					<div class="row">
 					
-					<form class="form-horizontal" id="frmLogin" action="${pageContext.request.contextPath}/login" method="POST">
+					<form class="form-horizontal" id="frmLogin" action="#login" method="POST">
 	                    
 	                    <div class="col-lg-6">
 	                    	
@@ -310,7 +310,7 @@ END PAGE
 														 <br/>													 																												 
 														 	 <input type="button" id="btn_submit"   class="btn btn-success" value="Submit">
 														 	 <img src="${pageContext.request.contextPath}/resources/assets/img/sending.gif" class="sending"/><label class="sending">Sending to your email...</label>
-														 	 &nbsp;&nbsp;&nbsp;<label class="check_your_email" style="color:green;">We have sent a link to reset your password! Please go to your email!</label>
+														 	 &nbsp;&nbsp;&nbsp;<label class="check_your_email" style="color:green;"><spring:message code="msg_request_new_message_to_reset_pwd"/></label>
 													</form> 
 													
 												</div>
@@ -490,18 +490,27 @@ Placed at the end of the document so the pages load faster
 		    	            	if(data == "Bad credentials"){
 		    	            		$("#message").replaceWith('<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 		    	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-										  				   '<strong class="alert-link">Invalid username or password! please try again!</strong>'+ 
+										  				   //'<strong class="alert-link">Invalid username or password! please try again!</strong>'+ 
+										  				   '<strong class="alert-link"><spring:message code="msg_invalid_email_pwd"/></strong>'+ 
 														   '</div>');
 		    	            	}else if(data == 'false'){
-		    	            		$("#message").replaceWith('<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+		    	            		$("#message").replaceWith(
+		    	            				   /* ​​​​​'<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
 							  				   '<strong class="alert-link">Your email is not yet verify. Please go to your email to verify!</strong>'+ 
 											   '<br/><a href="#" id="btFrmSendMailToConf">Not yet receive mail click here!</a>'+
-							  				   '</div>');
+							  				   '</div>' */
+		    	            				   '<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+							  				   '<strong class="alert-link"><spring:message code="msg_inactive_account"/></strong>'+ 
+											   '<br/><a href="#" id="btFrmSendMailToConf">Request a new message!</a>'+
+							  				   '</div>'
+							  				   );
 		    	            	}else{
 									$("#message").replaceWith('<div id="message" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
  	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-								  				   '<strong class="alert-link">Login successfully!</strong>'+ 
+								  				   /* '<strong class="alert-link">Login successfully!</strong>'+  */
+								  				  '<strong class="alert-link"><spring:message code="msg_login_success"/></strong>'+ 
 												   '</div>');
 		    	            		setTimeout(function(){
 		    	            			location.href = data;
@@ -618,14 +627,16 @@ Placed at the end of the document so the pages load faster
 	         		  if( $("#password").val().length < 6 || $("#repassword").val().length < 6){
 	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 	  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-					  				   '<strong class="alert-link">Password must be at least 6 characters!</strong>'+ 
+					  				  /*  '<strong class="alert-link">Password must be at least 6 characters!</strong>'+  */
+					  				  '<strong class="alert-link"><spring:message code="msg_password_length"/></strong>'+ 
 									   '</div>');
 		         			  return; 
 	         		  }
 	         		  if( $("#password").val() != $("#repassword").val()){
 	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				  				   '<strong class="alert-link">Passwords do not match!</strong>'+ 
+				  				  /*  '<strong class="alert-link">Passwords do not match!</strong>'+  */
+				  				   '<strong class="alert-link"><spring:message code="msg_passwords_donnot_match"/></strong>'+ 
 								   '</div>');
 	         			  return;
 	         		  }
@@ -648,37 +659,58 @@ Placed at the end of the document so the pages load faster
 			                },
 		    	            data: JSON.stringify(frmData), 
 		    	            success: function(data) { console.log(data);
+		    	            	// Not yet confirmed.
 		    	            	if(data.STATUS == "NOTCONFIRMED"){
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				 				  				   '<strong class="alert-link">This email is already registered with KhmerAcademy, but not yet active. Please go to your email to active your account <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> or  <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend confirmed code to your email</a></strong></strong> <p class="alert-link">If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+ 
+				 				  				   /* '<strong class="alert-link">This email is already registered with KhmerAcademy,'+
+												   'but not yet active. Please go to your email to active your account' +
+												   ' <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> or  ' +
+												   ' <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend confirmed code to your email</a>' + 
+												   ' </strong></strong> <p class="alert-link">If you did not receive our email, please check your junk/spam folder. '+
+												   ' If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+  */
+												   
+												   '<strong class="alert-link"><spring:message code="msg_inactive_account"/> ' +
+												   ' <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Request a new message </a>' + 
 				 							   '</div>');
 		    	            		KA.destroyProgressBar();
-		    	            	}else if(data.STATUS == "FACEBOOK"){
+		    	            	}
+		    	            	// Email is already register with facebook
+		    	            	else if(data.STATUS == "FACEBOOK"){
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				 				  				   '<strong class="alert-link">This email is already registered! Please click the Facebook button to login <br/> or  <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+ 
+				 				  				   /* '<strong class="alert-link">This email is already registered! Please click the Facebook button to login <br/> or  <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+  */
+				 				  				   '<strong class="alert-link"><spring:message code="msg_existed"/>  <a href="#reset" id="btFrmreset">Reset password</a></strong>'+ 
 				 							   '</div>');
 		    	            		KA.destroyProgressBar();
-		    	            	}else if(data.STATUS == false){
+		    	            	}
+		    	            	// Email is already register
+		    	            	else if(data.STATUS == false){
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				 				  				   '<strong class="alert-link">There is already an account with this email! Please use another email or <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+ 
-				 							   '</div>');
+				 				  				   /* '<strong class="alert-link">There is already an account with this email! Please use another email or <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+  */
+				 				  				   '<strong class="alert-link"> <spring:message code="msg_existed"/> <a href="#reset" id="btFrmreset">Reset password</a></strong>'+
+				 				  				'</div>');
 		    	            		KA.destroyProgressBar();
 		    	            	}else{
-		    	            		
+		    	            		// Register success
 		    	            		email =  $("#email").val();
 		    	            		
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
-				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				 				  				   '<strong class="alert-link">We have sent you a message at <a class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+ 
-				 					               '<p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+
+				   		                       	   /* '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   '<strong class="alert-link">We have sent you a message at <a class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> ' +
+				 				  				   '<span>Please follow the link in that message to complete your Khmer Academy account!</span> ' +
+				 				  				   '<a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a>'+
+				 				  				   '<a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+ 
+				 					               '<p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+ */
+				 					               
+				 					               '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   '<strong class="alert-link"><spring:message code="msg_create_account_success_but_not_yet_activate"/><a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Request a new message </a>'+
+				 					               '</strong>'+ 
 				 				  				   '</div>');
 								
 								
-									$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link">We have sent you a message at <a  class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+
-															  '<p style="font-size: 14px;color:white">If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>');
+									$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link"> <spring:message code="msg_create_account_success_but_not_yet_activate"/> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Request a new message </a></p>');
 									
 									
 									$("#p-success").bPopup({modalClose: false}); 
@@ -788,7 +820,8 @@ Placed at the end of the document so the pages load faster
  						success: function(data){ 
  							$("#message-resend").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
 		   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-		 				  				   '<strong class="alert-link">We have sent you a message at <a href="https://'+email+'">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a></strong> <p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+ 
+		 				  				   /* '<strong class="alert-link">We have sent you a message at <a href="https://'+email+'">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a></strong> <p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+  */
+		 				  				   '<strong class="alert-link"> <spring:message code="msg_request_new_message"/> </p>'+ 
 		 					            '</div>');
 		    	            	KA.destroyProgressBarWithPopup();
 		    	            },

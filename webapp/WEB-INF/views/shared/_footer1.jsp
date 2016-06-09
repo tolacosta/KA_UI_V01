@@ -1,0 +1,901 @@
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<!-- BEGIN FOOTER -->
+<footer class="">
+	<div class="container">
+		<div class="row">
+		
+			<%-- <div class="col-sm-6 col-md-2">
+				<h4><spring:message code="f_about"/></h4>
+				<ul class="list">
+					<li><a href="${pageContext.request.contextPath}/about"><spring:message code="f_our_mission"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/about/volunteer">Our volunteers</a></li>
+					<li><a href="${pageContext.request.contextPath}/about/supporter"><spring:message code="f_our_supporters"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/about/partner"><spring:message code="f_our_partners"/></a></li>
+					<li><a href="#${pageContext.request.contextPath}/about/contact"><spring:message code="f_contact_us"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/about/contribute"><spring:message code="f_contribute"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/about/contribute"><spring:message code="f_volunteer"/></a></li>
+				</ul>
+				
+				
+				
+			</div> --%>
+			
+			<div class="col-sm-3">
+				<h4><spring:message code="f_service"/></h4>
+				<ul class="list">
+					<li><a href="${pageContext.request.contextPath}/elearning"><spring:message code="f_e-learning"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/tutorial"><spring:message code="f_tutorial"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/forum"><spring:message code="f_forum"/></a></li>
+					<li><a href="http://news.khmeracademy.org" target="_blank"><spring:message code="f_news"/></a></li>
+					<li><a href="http://expert.khmeracademy.org" target="_blank">Expert Database</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-sm-3">
+				<h4><spring:message code="f_social"/></h4>
+				<ul class="list">
+					<li><a href="https://www.facebook.com/KhmerAcademy.Org/" target="_blank"><spring:message code="f_facebook"/></a></li>
+					<li><a href="https://plus.google.com/+KhmerAcademyOrg/posts" target="_blank"><spring:message code="f_google"/></a></li>
+					<li><a href="https://www.youtube.com/channel/UCnE8zj9WeCl0Jvi8mX6olww" target="_blank"><spring:message code="f_youtube"/></a></li>
+				</ul>
+			</div>
+			
+			<div class="col-sm-3">
+				<h4>Download Mobile App</h4>
+				<ul class="list">
+					<li><a href="https://itunes.apple.com/kh/app/khmer-academy/id1082906587?mt=8" target="_blank"><img src="${pageContext.request.contextPath}/resources/uploads/icon/appstore.png"></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=org.khmeracademy" target="_blank"><img src="${pageContext.request.contextPath}/resources/uploads/icon/googleplay.png"></a></li>
+				</ul>
+				
+				
+			</div>
+			
+			<div class="col-sm-3">
+				<h4><spring:message code="f_follow_us_on_fb"/></h4>
+				<div class="fb-like-box" data-href="https://www.facebook.com/KhmerAcademy.Org" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+			</div><!-- /.col-sm-3 -->
+			
+			
+			
+				
+			
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</footer><!-- /.section -->
+
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<spring:message code="f_copy_right"/>
+			</div><!-- /.col-sm-5 -->
+			<%-- <div class="col-sm-6 text-right">
+				Download Mobile App
+				<img src="${pageContext.request.contextPath}/resources/uploads/icon/appstore.png">
+				<img src="${pageContext.request.contextPath}/resources/uploads/icon/googleplay.png">
+			</div> --%>
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</div><!-- /.footer -->
+<!-- END FOOTER -->
+
+
+
+<!-- BEGIN BACK TO TOP BUTTON -->
+<div id="back-top">
+	<i class="fa fa-chevron-up"></i>
+</div>
+<!-- END BACK TO TOP -->
+
+<!--
+===========================================================
+END PAGE
+===========================================================
+-->
+
+		<!-- Modal -->
+								
+		
+		<div id="p-frmLogin" class="ka-popup" style="display: none;width:70%;    margin-top: 100px;">
+			<div class="modal-content">
+				<div class="modal-header" style="text-align: center;">
+
+					<button type="button" class="close" aria-hidden="true">
+						<span class="button b-close"><span>x</span></span>
+					</button>
+					
+					<h4 class="bolded">Login</h4>
+
+				</div>
+				<div class="modal-body">
+					
+					
+					<div class="row">
+					
+					<form class="form-horizontal" id="frmLogin" action="${pageContext.request.contextPath}/login" method="POST">
+	                    
+	                    <div class="col-lg-6">
+	                    	
+	                    	<h5 class="bolded">Login with you social accounts</h5>	
+	                	    <div class="form-group ">
+	                	    	<div class="col-lg-12">
+	                				<button style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block"><i class="fa fa-facebook"></i> Facebook</button>
+	                			</div>
+	                		</div>			
+	                    	
+	                    	<hr style="margin: 20px;">
+	                    	
+	                    	<h5 class="bolded">Login with you Khmer Academy accounts</h5>	
+	                    	
+		                    <div id="message"></div>
+		                    
+		                    <div class="form-group ">
+		                        <div class="col-lg-12">
+		                            <input class="form-control rounded bold-border" type="text" required="required" oninvalid="this.setCustomValidity('The email is incorrect!')" oninput="setCustomValidity('')" name="ka_email" id="ka_email" placeholder="Email">
+		                        </div>
+		                    </div>
+		
+		                    <div class="form-group">
+		                        <div class="col-lg-12">
+		                            <input class="form-control rounded bold-border" type="password" required="required" oninvalid="this.setCustomValidity('The password is incorrect!')" oninput="setCustomValidity('')" name="ka_password"  id="ka_password" placeholder="Password">
+		                        </div>
+		                    </div>
+		
+		                    <div class="form-group ">
+		                        <div class="col-lg-12">
+		                            <div class="checkbox checkbox-primary">
+		                                <input id="checkbox-signup" type="checkbox">
+		                                <label for="checkbox-signup">
+		                                    Remember me
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                    
+		                    <div class="form-group text-center m-t-40">
+		                        <div class="col-lg-12">
+		                            <button class="btn btn-primary w-lg waves-effect waves-light" type="submit">Login</button>
+		                        </div>
+		                    </div>
+		
+		                    <div class="form-group m-t-30">
+		                        <div class="col-sm-7">
+		                            <a  href="#reset" id="btFrmreset"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
+		                        </div>
+		                        <div class="col-sm-5 text-right">
+		                            <a href="javascript:" class="btSignUp">Create an account</a>
+		                        </div>
+		                    </div>
+	                  
+	                  	 </div>
+	                    
+	                    <div class="col-lg-6">
+	                			
+	                		<h5 class="bolded">Login with social accounts</h5>	
+	                		<button style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block"><i class="fa fa-facebook"></i> Facebook</button>
+	                			
+	               		</div>
+	                
+	                
+	                </form>
+	                
+	                
+	                  </div>
+	                   
+	              
+	                
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<div id="p-frmSignUp" class="ka-popup" style="display: none;width: 70%;">
+			<div class="modal-content" style="top:90px">
+				<div class="modal-header">
+
+					<button type="button" class="close" aria-hidden="true">
+						<span class="button b-close"><span>x</span></span>
+					</button>
+					
+					<h4 class="bolded">Sign up Khmer Academy account and start Learning</h4>
+
+				</div>
+				<div class="modal-body" >
+					
+					<form class="form-horizontal m-t-20" id="frmSignUp" action="${pageContext.request.contextPath}/signup" method="POST">
+	                    
+	                    <div id="message-re"></div>
+	                    
+	                    
+	                     <div class="col-lg-6">
+			                    <div class="form-group ">
+			                        <div class="col-lg-12">
+			                        	<label>Email <span style="color:red">*</span></label>
+			                            <input class="form-control rounded bold-border" type="email" required="required" oninvalid="this.setCustomValidity('The email is incorrect!')" oninput="setCustomValidity('')" name="email" id="email" placeholder="Email">
+			                        </div>
+			                    </div>
+			                    
+			                    <div class="form-group ">
+			                        <div class="col-lg-12">
+			                        	<label>Username <span style="color:red">*</span></label>
+			                            <input class="form-control rounded bold-border" type="text" required="required" oninvalid="this.setCustomValidity('Username is required!')" oninput="setCustomValidity('')" name="username" id="username" placeholder="Username">
+			                        </div>
+			                    </div>
+			
+			                    <div class="form-group">
+			                        <div class="col-lg-12">
+			                        	<label>Password <span style="color:red">*</span></label>
+			                            <input class="form-control rounded bold-border" type="password" required="required" oninvalid="this.setCustomValidity('The password is required!')" oninput="setCustomValidity('')" name="password"  id="password" placeholder="Password">
+			                        </div>
+			                    </div>
+			                    
+			                    <div class="form-group">
+			                        <div class="col-lg-12">
+			                        	<label>Confirm password <span style="color:red">*</span></label>
+			                            <input class="form-control rounded bold-border" type="password" required="required" oninvalid="this.setCustomValidity('The Confirm Password is required!')" oninput="setCustomValidity('')" name="repassword"  id="repassword" placeholder="Confirm Password">
+			                        </div>
+			                    </div>
+			            </div>
+			            
+			            <div class="col-lg-6">        
+			                    <div class="form-group">
+			                    	<div class="col-lg-12">
+			                    			<label>Department <span style="color:red">*</span></label>
+											<select placeholder="Choose a department" class="form-control rounded bold-border" id="getDepartment">
+												
+											</select>
+									</div>
+								</div>
+								
+			                    <div class="form-group">
+			                    	<div class="col-lg-12">
+			                    			<label>University <span style="color:red">*</span></label>
+											<select placeholder="Choose a university" class="form-control rounded bold-border" id="getUniversity">
+												
+											</select>
+									</div>
+								</div>
+								
+								<div class="form-group">
+			                    	<div class="col-lg-12">
+										<h5 class="bolded">Sign up with social accounts</h5>	
+	                					<button style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block"><i class="fa fa-facebook"></i> Facebook</button>
+	                				</div>
+								</div>
+						</div>
+	                    
+	                    
+	                    <div class="form-group text-center m-t-40">
+	                        <div class="col-xs-12">
+	                            <button class="btn btn-primary w-lg waves-effect waves-light" type="submit">Sign Up</button>
+	                        </div>
+	                    </div>
+		
+		 				<div class="form-group text-center m-t-40">
+	                        <div class="col-xs-12">
+	                            Already have an account? <a href="#" id="btSLogin">Login</a>
+	                        </div>
+	                    </div>
+	                    
+	                </form>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+									<div id="frmreset" class="ka-popup" style="display: none;width: 70%;">
+										  
+										  <div class="modal-content">
+												<div class="modal-header">
+								
+													<button type="button" class="close" aria-hidden="true">
+														<span class="button b-close"><span>x</span></span>
+													</button>
+													
+													<h4 class="bolded">Reset Password</h4>
+								
+												</div>
+												<div class="modal-body" >
+													
+													<form method="post" name="frmupdateplaylist" action="/" id="frmupdateplaylist" >
+													<label> Enter your email here</label>
+													<div class="input-group">
+													
+                                      						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>                                      
+                                     						<input type="text" class="form-control" name="email" id="emailaddress" placeholder="Enter your email !">
+                                   						 </div>
+														 <br/>													 																												 
+														 	 <input type="button" id="btn_submit"   class="btn btn-success" value="Submit">
+														 	 <img src="${pageContext.request.contextPath}/resources/assets/img/sending.gif" class="sending"/><label class="sending">Sending to your email...</label>
+														 	 &nbsp;&nbsp;&nbsp;<label class="check_your_email" style="color:green;">We have sent a link to reset your password! Please go to your email!</label>
+													</form> 
+													
+												</div>
+											</div>
+											
+											
+											
+										  
+										</div><!-- /#DefaultModal -->	
+		
+		
+
+
+										<div id="frmSendMailToConfrim" class="ka-popup" style="display: none;width: 70%;">
+										  
+										  <div class="modal-content">
+												<div class="modal-header">
+								
+													<button type="button" class="close" aria-hidden="true">
+														<span class="button b-close"><span>x</span></span>
+													</button>
+													
+													<h4 class="bolded">Please provide your email that you have registered with Khmer Academy!</h4>
+								
+												</div>
+												<div class="modal-body" >
+													
+													<form method="post" name="frmupdateplaylist" action="/" id="frmupdateplaylist" >
+													
+													<div id="message-resend"></div>
+													
+													<label> Enter your email here</label>
+													<div class="input-group">
+													
+                                      						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>                                      
+                                     						<input type="text" class="form-control" name="email" id="confirm_email" placeholder="Enter your email !">
+                                   						 </div>
+														 <br/>													 																												 
+														 	 <input type="button" id="btn_submit_again"   class="btn btn-success" value="Submit">
+														 	 <img src="${pageContext.request.contextPath}/resources/assets/img/sending.gif" class="sending"/><label class="sending">Sending to your email...</label>
+														 	 &nbsp;&nbsp;&nbsp;<label class="check_your_email" style="color:green;">we have sent you a new link to confirm your account.  <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a></label>
+													</form> 
+													
+												</div>
+											</div>
+										  
+										</div>
+										
+										
+									<div id="p-IfMobile" class="ka-popup" style="display: none;width: 100%;margin-top:100px;">
+										  
+										  <div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" aria-hidden="true">
+														<span class="button b-close"><span>x</span></span>
+													</button>
+													<h4 class="bolded">KhmerAcademy is available on Mobile!</h4>
+												</div>
+												<div class="modal-body" >
+													
+                                     				<a href="#" id="dwnApp" class="btn btn-success">Please Download Mobile Application</a>
+                                   						
+												</div>
+											</div>
+										  
+									</div>
+									
+									<div id="p-success" class="ka-popup" style="display: none;width: 50%;">
+										<div class="alert alert-success alert-block fade in alert-dismissable">
+															  <button type="button" class="close" aria-hidden="true">
+																<span class="button b-close"><span>x</span></span>
+															</button>
+															
+														<div id="pop-re">
+														
+														</div>
+										</div>		
+									</div>	
+		
+		
+<!--
+===========================================================
+Placed at the end of the document so the pages load faster
+===========================================================
+-->
+<!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/retina/retina.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/mixitup/jquery.mixitup.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/chosen/chosen.jquery.min.js" ></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/datepicker/bootstrap-datepicker.js" ></script>
+
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/validator/bootstrapValidator.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/plugins/validator/myValidator.js"></script>
+
+
+		
+
+
+
+<script>
+	$(document).ready(function(){
+		$(function(){
+		 var shrinkHeader = 250;
+		  $(window).scroll(function() {
+			var scroll = getCurrentScroll();
+			  if ( scroll >= shrinkHeader ) {
+				   $('.top-navbar').addClass('shrink-nav');
+				   $('.top-navbar').addClass('dark-color');
+				}
+				else {
+				   $('.top-navbar').removeClass('shrink-nav');
+				   $('.top-navbar').removeClass('dark-color');
+				}
+		  });
+			function getCurrentScroll() {
+				return window.pageYOffset || document.documentElement.scrollTop;
+			}
+		});
+	})
+</script>
+
+<script src="${pageContext.request.contextPath}/resources/assets/js/apps.js"></script>
+<!-- BPOP UP -->
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.bpopup.min.js"></script>
+<!-- Progress Bar -->
+<script src="${pageContext.request.contextPath}/resources/assets/js/progressbar.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.blockUI.js"></script>
+<!-- jQuery Template -->
+<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.tmpl.min.js"></script>
+
+
+
+ 
+<script type="text/javascript">
+            /* ==============================================
+            Counter Up
+            =============================================== */
+            $(document).ready(function(){
+               
+            	
+            	$(document).on('click',".btLogin", function(){ 
+                	$("#frmLogin").trigger("reset");
+                	$("#p-frmLogin").bPopup(/* {modalClose: false} */);
+// 					KA.createProgressBar();	
+// 					setTimeout(function(){
+// 						KA.destroyProgressBar();
+// 					}, 1000 );
+                	
+                });
+                
+				$("#frmLogin").submit(function(e){
+           		
+	         		  e.preventDefault(); // alert($(this).serialize());
+	         		  frmData = { ka_username : $("#ka_email").val(),
+	         				  	  ka_password : $("#ka_password").val()
+	         				     }; 
+	         		 // alert( JSON.stringify(frmData) + "   "+$("#ka_password").val());
+	         		  KA.createProgressBarWithPopup();
+	         		  $.ajax({
+		    	            url: "${pageContext.request.contextPath}/login",
+		    	            type: "POST",
+		    	            datatype : "JSON",
+		    	            data: frmData, 
+		    	            success: function(data) {
+		    	            	KA.destroyProgressBarWithPopup();
+		    	            	/* if(data == "User account is locked"){
+		    	            		alert("3 "+data);
+		    	            	}else if(data == "User is disabled"){
+		    	            		alert("2 "+data);
+		    	            	}else  */
+// 		    	            	console.log(data);
+		    	            	if(data == "Bad credentials"){
+		    	            		$("#message").replaceWith('<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+		    	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+										  				   //'<strong class="alert-link">Invalid username or password! please try again!</strong>'+ 
+										  				   '<strong class="alert-link">អ៊ីមែល​ ឬលេខសម្ងាត់មិនត្រឹមត្រូវទេ! សូមព្យាយាមម្តងទៀត!</strong>'+ 
+														   '</div>');
+		    	            	}else if(data == 'false'){
+		    	            		$("#message").replaceWith(
+		    	            				   /* ​​​​​'<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+							  				   '<strong class="alert-link">Your email is not yet verify. Please go to your email to verify!</strong>'+ 
+											   '<br/><a href="#" id="btFrmSendMailToConf">Not yet receive mail click here!</a>'+
+							  				   '</div>' */
+		    	            				   '<div id="message" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+							  				   '<strong class="alert-link">អ៊ីមែលនេះធ្លាប់បានចុះឈ្មោះដើម្បីបង្កើតគណនីរួចហើយ​ ប៉ុន្តែគណនីនេះមិនអាចដំណើរការបានទេ! សូមពិនិត្យមើលអ៊ីមែលរបស់អ្នកឡើងវិញ ។ ប្រសិនជាអ្នកមិនបានទទួលសារនៅក្នុងប្រអប់សាររបស់អ្នកទេ សូមពិនិត្យមើលប្រអប់​ Spam ឬ </strong>'+ 
+											   '<br/><a href="#" id="btFrmSendMailToConf">ស្នើរសុំសារថ្មីមួយទៀត!</a>'+
+							  				   '</div>'
+							  				   );
+		    	            	}else{
+									$("#message").replaceWith('<div id="message" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
+ 	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+								  				   /* '<strong class="alert-link">Login successfully!</strong>'+  */
+								  				  '<strong class="alert-link">ចូលប្រើប្រាស់បានជោគជ័យ!</strong>'+ 
+												   '</div>');
+		    	            		setTimeout(function(){
+		    	            			location.href = data;
+		    	            		}, 500 );
+		    	            		
+		    	            	}
+		    	            	
+		    	            },
+		    	         	error: function(data){
+		    	         		KA.destroyProgressBarWithPopup();
+		    	         		console.log(data);
+		    				}
+		    	        });
+	         			
+					});
+                
+                
+                
+                
+                // SIgn up
+                $(document).on('click',".btSignUp", function(){   
+                	$("#p-frmLogin").bPopup().close();
+                	$("#frmSignUp").trigger("reset");
+                	$("#p-frmSignUp").bPopup(/* {modalClose: false} */);
+                	if( $('#getDepartment').has('option').length == 0 || $('#getUniversity').has('option').length == 0) {
+                		listDepartment_University();               		
+                	}
+// 					KA.createProgressBar();	
+// 					setTimeout(function(){
+// 						KA.destroyProgressBar();
+// 					}, 1000 );
+                	
+                })
+                
+                $(document).on('click',"#btSLogin", function(){ 
+                	$("#frmLogin").trigger("reset");
+                	$("#p-frmLogin").bPopup(/* {modalClose: false} */);
+                	$("#p-frmSignUp").bPopup().close();
+                });
+                
+                listUniversity = function(){
+                	KA.createProgressBarWithPopup();
+    				$.ajax({ 
+    				    url: "${pageContext.request.contextPath}/rest/university?page=1&item=100", 
+    				    type: 'GET',
+    				    beforeSend: function(xhr) {
+    	                    xhr.setRequestHeader("Accept", "application/json");
+    	                    xhr.setRequestHeader("Content-Type", "application/json");
+    	                },
+    				    success: function(data) { 
+//     						console.log(data);
+    						if(data.RESP_DATA.length>0){
+    							$("#university_tmpl").tmpl(data.RESP_DATA).appendTo("#getUniversity");
+    						}
+    	                	KA.destroyProgressBarWithPopup();
+    				    },
+    				    error:function(data,status,er) { 
+    	                	KA.destroyProgressBarWithPopup();
+    				        console.log("error: "+data+" status: "+status+" er:"+er);
+    				    }
+    				});
+    			};
+    			
+    			listDepartment = function(){
+    				KA.createProgressBarWithPopup();
+    				$.ajax({ 
+    				    url: "${pageContext.request.contextPath}/rest/department?page=1&item=100", 
+    				    type: 'GET',
+    				    beforeSend: function(xhr) {
+    	                    xhr.setRequestHeader("Accept", "application/json");
+    	                    xhr.setRequestHeader("Content-Type", "application/json");
+    	                },
+    				    success: function(data) { 
+//     						console.log(data);
+    						$("#department_tmpl").tmpl(data.RESP_DATA).appendTo("#getDepartment");
+    						
+    						KA.destroyProgressBarWithPopup();
+    				    },
+    				    error:function(data,status,er) { 
+    				    	KA.destroyProgressBarWithPopup();
+    				        console.log("error: "+data+" status: "+status+" er:"+er);
+    				    }
+    				});
+    			};
+    			
+    			listDepartment_University = function(){
+    				KA.createProgressBarWithPopup();
+    				$.ajax({ 
+    				    url: "${pageContext.request.contextPath}/rest/listuniversity_department", 
+    				    type: 'GET',
+    				    beforeSend: function(xhr) {
+    	                    xhr.setRequestHeader("Accept", "application/json");
+    	                    xhr.setRequestHeader("Content-Type", "application/json");
+    	                },
+    				    success: function(data) { 
+//     						console.log(data);
+    						$("#department_tmpl").tmpl(data.DEPARTMENT).appendTo("#getDepartment");
+    						$("#university_tmpl").tmpl(data.UNIVERSITY).appendTo("#getUniversity");
+    						KA.destroyProgressBarWithPopup();
+    				    },
+    				    error:function(data,status,er) { 
+    				    	KA.destroyProgressBarWithPopup();
+    				        console.log("error: "+data+" status: "+status+" er:"+er);
+    				    }
+    				});
+    			};
+    			
+    			$("#frmSignUp").submit(function(e){ 
+	         		  e.preventDefault(); // alert($(this).serialize());
+	         		 // alert($("#password").val() +" "+ $("#repassword").val());
+	         		 
+	         		
+	         		 
+	         		  if( $("#password").val().length < 6 || $("#repassword").val().length < 6){
+	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+	  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+					  				  /*  '<strong class="alert-link">Password must be at least 6 characters!</strong>'+  */
+					  				  '<strong class="alert-link">សូមបំពេញលេខសម្ងាត់ចាប់ពី ៦ ខ្ទង់ឡើងទៅ!</strong>'+ 
+									   '</div>');
+		         			  return; 
+	         		  }
+	         		  if( $("#password").val() != $("#repassword").val()){
+	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				  				  /*  '<strong class="alert-link">Passwords do not match!</strong>'+  */
+				  				   '<strong class="alert-link">បញ្ជាក់លេខសម្ងាត់មិនត្រឹមត្រូវទេ!</strong>'+ 
+								   '</div>');
+	         			  return;
+	         		  }
+	         		  frmData = { email : $("#email").val(),
+	         				 	  username : $("#username").val(),
+	         				  	  password : $("#password").val(),
+	         				  	  universityId : $("#getUniversity").val(),
+	         				  	  departmentId : $("#getDepartment").val(),
+	         				  	  gender : $("#getGender").val()
+	         		  }; 
+	         		  console.log(frmData);
+	         		  KA.createProgressBar();
+	         		  $.ajax({
+		    	            url: "${pageContext.request.contextPath}/rest/signup",
+		    	            type: "POST",
+		    	            datatype : "JSON",
+		    	            beforeSend: function(xhr) {
+			                    xhr.setRequestHeader("Accept", "application/json");
+			                    xhr.setRequestHeader("Content-Type", "application/json");
+			                },
+		    	            data: JSON.stringify(frmData), 
+		    	            success: function(data) { console.log(data);
+		    	            	// Not yet confirmed.
+		    	            	if(data.STATUS == "NOTCONFIRMED"){
+		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   /* '<strong class="alert-link">This email is already registered with KhmerAcademy,'+
+												   'but not yet active. Please go to your email to active your account' +
+												   ' <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> or  ' +
+												   ' <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend confirmed code to your email</a>' + 
+												   ' </strong></strong> <p class="alert-link">If you did not receive our email, please check your junk/spam folder. '+
+												   ' If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+  */
+												   
+												   '<strong class="alert-link">អ៊ីមែលនេះធ្លាប់បានចុះឈ្មោះដើម្បីបង្កើតគណនីរួចហើយ​ ប៉ុន្តែគណនីនេះមិនអាចដំណើរការបានទេ! សូមពិនិត្យមើលអ៊ីមែលរបស់អ្នកឡើងវិញ ! '+
+												   ' ប្រសិនជាអ្នកមិនបានទទួលសារនៅក្នុងប្រអប់សាររបស់អ្នកទេ សូមពិនិត្យមើលប្រអប់ Spam ឬ' +
+												   ' <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">ស្នើរសុំសារថ្មីមួយទៀត </a>' + 
+				 							   '</div>');
+		    	            		KA.destroyProgressBar();
+		    	            	}
+		    	            	// Email is already register with facebook
+		    	            	else if(data.STATUS == "FACEBOOK"){
+		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   /* '<strong class="alert-link">This email is already registered! Please click the Facebook button to login <br/> or  <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+  */
+				 				  				   '<strong class="alert-link">អ៊ីមែលនេះធ្លាប់បានចុះឈ្មោះរួចហើយ! សូមប្រើប្រាស់អ៊ីមែលដ៏ទៃទៀត ឬ   <a href="#reset" id="btFrmreset">កំណត់លេខសម្ងាត់ឡើងវិញ!</a></strong>'+ 
+				 							   '</div>');
+		    	            		KA.destroyProgressBar();
+		    	            	}
+		    	            	// Email is already register
+		    	            	else if(data.STATUS == false){
+		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   /* '<strong class="alert-link">There is already an account with this email! Please use another email or <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+  */
+				 				  				   '<strong class="alert-link"> អ៊ីមែលនេះធ្លាប់បានចុះឈ្មោះរួចហើយ! សូមប្រើប្រាស់អ៊ីមែលដ៏ទៃទៀត ឬ  <a href="#reset" id="btFrmreset">កំណត់លេខសម្ងាត់ឡើងវិញ!</a></strong>'+
+				 				  				'</div>');
+		    	            		KA.destroyProgressBar();
+		    	            	}else{
+		    	            		// Register success
+		    	            		email =  $("#email").val();
+		    	            		
+		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
+				   		                       	   /* '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   '<strong class="alert-link">We have sent you a message at <a class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> ' +
+				 				  				   '<span>Please follow the link in that message to complete your Khmer Academy account!</span> ' +
+				 				  				   '<a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a>'+
+				 				  				   '<a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+ 
+				 					               '<p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+ */
+				 					               
+				 					               '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				 				  				   '<strong class="alert-link">គណនីរបស់អ្នកត្រូវបានបង្កើត។ សូមពិនិត្យមើលអ៊ីមែលរបស់អ្នកដើម្បីធ្វើអោយគណនីរបស់អ្នកអាច ដំណើរការ និងចូលប្រើបា្រស់ Khmer Academy បាន ។ <br/> '+
+				 					               'ប្រសិនជាអ្នកមិនបានទទួលសារនៅក្នុងប្រអប់សាររបស់អ្នកទេ សូមពិនិត្យមើលប្រអប់Spam ឬ <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">ស្នើរសុំសារថ្មីមួយទៀត </a> ។'+
+				 					               '</strong>'+ 
+				 				  				   '</div>');
+								
+								
+									$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link">គណនីរបស់អ្នកត្រូវបានបង្កើត។ សូមពិនិត្យមើលអ៊ីមែលរបស់អ្នកដើម្បីធ្វើអោយគណនីរបស់អ្នកអាច ដំណើរការ និងចូលប្រើបា្រស់ Khmer Academy បាន ។</strong>'+
+															  '<p style="font-size: 14px;color:white">ប្រសិនជាអ្នកមិនបានទទួលសារនៅក្នុងប្រអប់សាររបស់អ្នកទេ សូមពិនិត្យមើលប្រអប់Spam ឬ <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">ស្នើរសុំសារថ្មីមួយទៀត </a></p>');
+									
+									
+									$("#p-success").bPopup({modalClose: false}); 
+									
+			    	            	KA.destroyProgressBar();
+		    	            		
+// 		    	            		setTimeout(function(){
+		    	            			
+		    	            			 /* email =  $("#email").val();
+		    	            			 $.ajax({
+		    	     						url : "${pageContext.request.contextPath}/rest/sendmail?email="+email+"&type=signup",
+		    	     						method: "GET",
+		    	     						success: function(data){ 
+// 				    		    	            	alert("Goto your email: "+email);
+										
+													$("#message-re").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
+									   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+									 				  				   '<strong class="alert-link">We have sent you a message at <a class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+ 
+									 					            '</div>');
+													
+													
+													$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link">We have sent you a message at <a  class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>');
+													
+													
+													$("#p-success").bPopup({modalClose: false}); 
+													
+				    		    	            	KA.destroyProgressBar();
+				    		    	            },
+				    		    	         	error: function(data){
+				    		    	         		console.log(data);
+				    		    				}
+				    		    	        }); */
+		    	            			 
+			    	            	
+// 		    						}, 500 );
+		    	            	}
+// 		    	            	console.log(data);
+		    	            },
+		    	         	error: function(data){
+		    	         		KA.destroyProgressBar();
+		    	         		console.log(data);
+		    				}
+		    	        });
+	         			
+					});
+    			
+    			
+    			$(document).on('click',"#btFrmreset", function(){  
+    				$("#p-frmLogin").bPopup().close();
+    				$("#p-frmSignUp").bPopup().close();
+    				$("#frmreset").bPopup();
+    			});
+    			
+    				
+    			
+    			
+    			
+    				
+    			  // Reset Password
+    			  $(".sending").hide();
+	  			  $(".check_your_email").hide();
+	  			  $(document).on('click', "#btn_submit", function() {									  
+	  					var address =$("#emailaddress").val()
+// 	  					console.log(address);
+	  					$(".sending").show();
+	  					if(address==""){						
+	  						$(".sending").hide(); 
+	  						return 0;}
+	  					else{
+	  					 KA.createProgressBarWithPopup();
+	  				 	 $.ajax({
+	  						url : "${pageContext.request.contextPath}/rest/sendmail?email="+address+"&type=reset",
+	  						method: "GET",
+	  						success: function(data){  	    							    																			
+	  							if(data.STATUS==true){
+	  								$(".sending").hide();
+	  								$(".check_your_email").show();															
+// 	  								setTimeout(function(){
+// 	  									$('#frmreset').bPopup().close();
+// 	  									$("#emailaddress").val("");
+// 	  									$(".check_your_email").hide();	
+// 	  								}, 3000);
+	  								
+	  							}
+	  							else{
+	  								$(".sending").hide();
+	  								alert("Invalid Email! Please try again!")
+	  							}					
+	  							KA.destroyProgressBarWithPopup();
+	  						}
+	  					});  
+	  					}
+	  				});
+    			
+    			 $(document).on('click','#btFrmSendMailToConf',function(){
+    				 $("#p-frmLogin").bPopup().close();
+    				 $("#p-frmSignUp").bPopup().close();
+	  				 $("#frmSendMailToConfrim").bPopup();
+    			 });
+	  			  
+    			$(document).on('click','#btn_submit_again',function(){
+    				var email =$("#confirm_email").val()
+    				KA.createProgressBarWithPopup();
+    				$.ajax({
+ 						url : "${pageContext.request.contextPath}/rest/sendmail?email="+email+"&type=signup",
+ 						method: "GET",
+ 						success: function(data){ 
+ 							$("#message-resend").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
+		   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+		 				  				   /* '<strong class="alert-link">We have sent you a message at <a href="https://'+email+'">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a></strong> <p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+  */
+		 				  				   '<strong class="alert-link">ក្រុមរបស់យើងបានផ្ញើសារទៅកាន់អ៊ីមែលរបស់អ្នក ។  សូមពិនិត្យមើលអ៊ីមែលរបស់អ្នកដើម្បីធ្វើអោយគណនីរបស់អ្នកអាច ដំណើរការ និងចូលប្រើបា្រស់ Khmer Academy បាន ។ ​ប្រសិនជាអ្នកមិនបានទទួលសារនៅក្នុងប្រអប់សាររបស់អ្នកទេ សូមពិនិត្យមើលប្រអប់ Spam ឬ ស្នើរសុំសារថ្មីមួយទៀត ។ </p>'+ 
+		 					            '</div>');
+		    	            	KA.destroyProgressBarWithPopup();
+		    	            },
+		    	         	error: function(data){
+		    	         		console.log(data);
+		    				}
+		    	        });  
+    			});
+	  			  
+    			
+    			
+    			
+            });
+            
+            
+        </script>
+        
+        <script id="university_tmpl" type="text/x-jquery-tmpl">
+	    	<option value="{{= universityId }}">{{= universityName }}</option>
+   		</script>
+   		
+        <script id="department_tmpl" type="text/x-jquery-tmpl">
+	    	<option value="{{= departmentId }}">{{= departmentName }}</option>
+   		</script>
+   		
+   	
+   		 
+   								<!-- <div id="fb-root"></div>
+								<script>(function(d, s, id) {
+								  var js, fjs = d.getElementsByTagName(s)[0];
+								  if (d.getElementById(id)) return;
+								  js = d.createElement(s); js.id = id;
+								  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.1&appId=733594286732881";
+								  fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));</script> -->
+								
+								
+								<div id="fb-root"></div>
+								<script>(function(d, s, id) {
+								  var js, fjs = d.getElementsByTagName(s)[0];
+								  if (d.getElementById(id)) return;
+								  js = d.createElement(s); js.id = id;
+								  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=157712197964057";
+								  fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));</script>
+   		 						
+   		 						 
+   		 						 <!-- <div id="fb-root"></div>
+								<script>(function(d, s, id){
+								     var js, fjs = d.getElementsByTagName(s)[0];
+								     if (d.getElementById(id)) {return;}
+								     js = d.createElement(s); js.id = id;
+								     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=733594286732881";
+								     fjs.parentNode.insertBefore(js, fjs);
+								   }(document, 'script', 'facebook-jssdk'));</script> -->
+   		 						 
+   
+   		 
+   		 <script>
+   		 $(document).ready(function(){
+   			 setTimeout(function(){ 
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+					ga('create', 'UA-58585702-1', 'auto');
+					ga('send', 'pageview');
+   			 }, 5000);
+   		 });
+		</script>
+		
+								
+								
+   		    

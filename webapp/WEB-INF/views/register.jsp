@@ -1,7 +1,11 @@
+<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
+<%@page import="org.springframework.security.core.Authentication"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -61,7 +65,7 @@
 					                     <div class="col-lg-12">
 							                    <div class="form-group ">
 							                        <div class="col-lg-12">
-							                        	<label><spring:message code="rp_email"/> <span style="color:red">*</span></label>
+							                        	<label><spring:message code="rp_email"/> <span style="color:red">* សូមប្រើប្រាស់អ៊ីមែលពិតប្រាកដរបស់ដើម្បីធ្វើកាចុះឈ្មោះ</span></label>
 							                            <input class="form-control rounded bold-border" type="email" required="required" oninvalid="this.setCustomValidity('The email is incorrect!')" oninput="setCustomValidity('')" name="email" id="email" placeholder="">
 							                        </div>
 							                    </div>
@@ -142,6 +146,7 @@
 		</div>
 		
 		
+		 
 		
 		
 		<!-- End My Contend -->
@@ -181,6 +186,8 @@
 				
 				
 				$("#fbDiv").show();
+				
+// 				alert("  tola tola   tola  ".replace(/ /g, ''));
 				   
 		  });
 		  </script>
