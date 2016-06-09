@@ -32,20 +32,20 @@ public class ELearningController {
 
 	@RequestMapping(value="" , method = RequestMethod.GET)
 	public String  index(ModelMap m){
-		/*final String uri = WebURL + "/rest/elearning/index";
+		final String uri = WebURL + "/rest/elearning/index";
 	    RestTemplate restTemplate = new RestTemplate();
 	    m.addAttribute("title","E-Learning | Khmer Academy");
 	    m.addAttribute("IMGURL", IMGURL);
 	    m.addAttribute("data", restTemplate.getForObject(uri, HashMap.class));
 		//return "/elearning/index";
-	    Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
+	    /*Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
 		if(!authentication.getPrincipal().equals("anonymousUser")){
 			User user = (User) authentication.getPrincipal();
 			m.addAttribute("userid", user.getUserId());
 		}else{
 			 m.addAttribute("userid", "null" );
 		}*/
-	    return "/elearning/index_new_4";
+	    return "/elearning/index_new_3";
 	}
 	
 	@RequestMapping(value="/playvideo" , method = RequestMethod.GET)

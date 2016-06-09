@@ -159,13 +159,14 @@
 															  <div class="panel-heading"  style="background:white">
 																<ul class="nav nav-tabs">
 																	<li class="active"><a href="#panel-recent" data-toggle="tab" class="eTab"  data-mid="empty" data-id="getRecent" aria-expanded="true">ថ្មីៗ</a></li>
-																	<li class=""><a href="#panel-general" data-toggle="tab" class="eTab"       data-mid="MjU="  data-id="getGeneral" aria-expanded="false">ចំណេះ​ទូទៅ</a></li>
+																	<li class=""><a href="#panel-general" data-toggle="tab" class="eTab"       data-mid="Mjg="  data-id="getGeneral" aria-expanded="false">គណិតវិទ្យា</a></li>
 																	<li class=""><a href="#panel-computerBasic" data-toggle="tab" class="eTab" data-mid="MjQ="  data-id="getComputerBasic" aria-expanded="false">កុំព្យូទ័រ​កម្រិត​មូលដ្ឋាន</a></li>
 																    <li class=""><a href="#panel-language" data-toggle="tab" class="eTab"      data-mid="MjM="  data-id="getLanguage" aria-expanded="false">ភាសា</a></li>
 																    <li class=""><a href="#panel-programming" data-toggle="tab" class="eTab"   data-mid="MQ=="  data-id="getProgramming" aria-expanded="false">Programming</a></li>
 																	<li class=""><a href="#panel-web" data-toggle="tab" class="eTab"           data-mid="MTc="  data-id="getWeb" aria-expanded="false">ការរចនា​គេហទំព័រ</a></li>
 																	<li class=""><a href="#panel-mobile" data-toggle="tab" class="eTab"        data-mid="MjE="  data-id="getMobile" aria-expanded="false">Mobile</a></li>
-																	<li class=""><a href="${pageContext.request.contextPath}/elearning"> ផ្សេងៗ</a></li>
+																	<li class=""><a href="#panel-science" data-toggle="tab" class="eTab"        data-mid="Mjk="  data-id="getScience" aria-expanded="false">វិទ្យាសាស្រ្ត</a></li>
+																	<%-- <li class=""><a href="${pageContext.request.contextPath}/elearning"> ផ្សេងៗ</a></li> --%>
 																</ul>
 															  </div>
 																<div id="panel-collapse-1" class="collapse in" aria-expanded="true">
@@ -236,6 +237,14 @@
 															  						
 																					</div>
 																			</div>
+																			
+																			<div class="tab-pane fade" id="panel-science">
+																					<div  id="getScience" class="row" style="height:  auto; overflow: hidden;">
+															  						
+																					</div>
+																			</div>
+																			
+																			
 																			
 																				
 																					<!-- <div class="row text-center">
@@ -1082,6 +1091,8 @@
 		    	*/
 		    	
 		    	showMainPageData();
+		    	
+		    
 				
 			});
 			

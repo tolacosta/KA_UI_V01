@@ -89,6 +89,16 @@
 							                
 							                    <div class="form-group">
 							                    	<div class="col-lg-12">
+							                    			<label>ភេទ<span style="color:red">*</span></label>
+															<select class="form-control rounded bold-border" id="getGender">
+																<option value="male" >ប្រុស</option>
+																<option value="female">ស្រី</option>
+															</select>
+													</div>
+												</div>
+												
+												<div class="form-group">
+							                    	<div class="col-lg-12">
 							                    			<label><spring:message code="rp_department"/> <span style="color:red">*</span></label>
 															<select placeholder="<spring:message code="rp_department"/>" class="form-control rounded bold-border" id="getDepartment">
 																

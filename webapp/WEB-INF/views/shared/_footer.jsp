@@ -633,9 +633,10 @@ Placed at the end of the document so the pages load faster
 	         				 	  username : $("#username").val(),
 	         				  	  password : $("#password").val(),
 	         				  	  universityId : $("#getUniversity").val(),
-	         				  	  departmentId : $("#getDepartment").val()
+	         				  	  departmentId : $("#getDepartment").val(),
+	         				  	  gender : $("#getGender").val()
 	         		  }; 
-// 	         		  console.log(frmData);
+	         		  console.log(frmData);
 	         		  KA.createProgressBar();
 	         		  $.ajax({
 		    	            url: "${pageContext.request.contextPath}/rest/signup",
@@ -650,13 +651,13 @@ Placed at the end of the document so the pages load faster
 		    	            	if(data.STATUS == "NOTCONFIRMED"){
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				 				  				   '<strong class="alert-link">This email is already registered with KhmerAcademy, but not yet active. Please go to your email to active your account <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> or  <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend confirmed code to your email</a></strong></strong>'+ 
+				 				  				   '<strong class="alert-link">This email is already registered with KhmerAcademy, but not yet active. Please go to your email to active your account <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> or  <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend confirmed code to your email</a></strong></strong> <p class="alert-link">If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+ 
 				 							   '</div>');
 		    	            		KA.destroyProgressBar();
 		    	            	}else if(data.STATUS == "FACEBOOK"){
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				 				  				   '<strong class="alert-link">This email is already registered with facebook account! Please click the Facebook button to login <br/> or  <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+ 
+				 				  				   '<strong class="alert-link">This email is already registered! Please click the Facebook button to login <br/> or  <a href="#reset" id="btFrmreset">reset your password!</a></strong>'+ 
 				 							   '</div>');
 		    	            		KA.destroyProgressBar();
 		    	            	}else if(data.STATUS == false){
@@ -672,10 +673,12 @@ Placed at the end of the document so the pages load faster
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
 				 				  				   '<strong class="alert-link">We have sent you a message at <a class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+ 
-				 					            '</div>');
+				 					               '<p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+
+				 				  				   '</div>');
 								
 								
-									$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link">We have sent you a message at <a  class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>');
+									$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link">We have sent you a message at <a  class="btn btn-primary btn-xs" href="https://'+email+'" target="_blank">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Resend email</a></strong>'+
+															  '<p style="font-size: 14px;color:white">If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>');
 									
 									
 									$("#p-success").bPopup({modalClose: false}); 
@@ -785,7 +788,7 @@ Placed at the end of the document so the pages load faster
  						success: function(data){ 
  							$("#message-resend").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
 		   		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-		 				  				   '<strong class="alert-link">We have sent you a message at <a href="https://'+email+'">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a></strong>'+ 
+		 				  				   '<strong class="alert-link">We have sent you a message at <a href="https://'+email+'">'+email+'</a><br/> <span>Please follow the link in that message to complete your Khmer Academy account!</span> <a href="https://'+email+'" target="_blank" class="btn btn-primary btn-xs">Open your mail</a></strong> <p>If you did not receive our email, please check your junk/spam folder. If you entered an incorrect email address, you will need to re-register with the correct email address.</p>'+ 
 		 					            '</div>');
 		    	            	KA.destroyProgressBarWithPopup();
 		    	            },

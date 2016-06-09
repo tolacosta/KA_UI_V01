@@ -5,6 +5,12 @@
 <meta name="keywords" content="Khmer Academy, Khmer Learning Online, Khmer Studying IT, IT Traning in Cambodia, Khmer Forum, IT Chatting">
 <meta name="author" content="Khmer Academy">
 
+	<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Your Website Title" />
+	<meta property="og:description"   content="Your description" />
+	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+	
 <title ng-bind-html="title">${title}</title>
 
 <!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
@@ -43,3 +49,7 @@
     margin-bottom: 30px;
 }
 </style>
+
+	
+	
+	

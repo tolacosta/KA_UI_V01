@@ -2,6 +2,7 @@ package org.khmeracademy.app.controllers.user;
 
 import java.util.Map;
 
+import org.khmeracademy.app.entities.SendMail;
 import org.khmeracademy.app.entities.input.FrmAddUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -78,6 +79,13 @@ public class UserRestController {
 	public ResponseEntity<Map<String , Object>> add_user_sc(@RequestBody FrmAddUser user){
 		HttpEntity<Object> request = new HttpEntity<Object>(user,header);
 		ResponseEntity<Map> response = rest.exchange(WSURL + "user/add_user_sc", HttpMethod.POST , request , Map.class) ;
+		return new ResponseEntity<Map<String , Object>>(response.getBody() , HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/rest/email/send" , method = RequestMethod.POST)
+	public ResponseEntity<Map<String , Object>> reSendConfirmedCode(@RequestBody SendMail sendMail){
+		HttpEntity<Object> request = new HttpEntity<Object>(sendMail,header);
+		ResponseEntity<Map> response = rest.exchange(WSURL + "email/send", HttpMethod.POST , request , Map.class) ;
 		return new ResponseEntity<Map<String , Object>>(response.getBody() , HttpStatus.OK);
 	}
 	

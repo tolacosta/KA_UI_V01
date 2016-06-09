@@ -130,6 +130,7 @@
 									<th>Registered Date</th>
 									<th>Role</th>
 									<th>Action</th>
+									<th>Re-Sent</th>
 									<!-- <th>Action</th> -->
 								</tr>
 							</thead>
@@ -337,11 +338,12 @@
 				<td>
 					{{if confirmed == false }} 
 						<i id="active" data-email="{{= email }}" data-toggle="tooltip" data-original-title="This account is not yet activated. The user doesn't verify email yet! Click to active!"  data-status="true" class="fa fa-remove icon-circle icon-xs icon-danger"></i>  
-						<i id="resend" data-email="{{= email }}" data-toggle="tooltip" data-original-title="Resend verified code"  class="fa fa-envelope icon-circle icon-xs icon-primary"></i>
+						<i style="cursor: pointer;" id="resend" data-email="{{= email }}" data-toggle="tooltip" data-original-title="Resend verified code"  class="fa fa-envelope icon-circle icon-xs icon-primary"></i>
 					{{else}} 
-						<i id="inactive" data-email="{{= email }}" data-toggle="tooltip" data-original-title="This account is activated. Click to inactive!"   data-status="false" class="fa fa-check icon-circle icon-xs icon-success"></i>  
+						<i  id="inactive" data-email="{{= email }}" data-toggle="tooltip" data-original-title="This account is activated. Click to inactive!"   data-status="false" class="fa fa-check icon-circle icon-xs icon-success"></i>  
 					{{/if}}
 				</td>
+				<td><!-- Resend Count -->{{if confirmed == false }} {{= point }} {{/if}}</td>
 			</tr>
    		</script>   
    		
@@ -974,12 +976,42 @@
 			});
 			
 			$(document).on('click' , '#resend' , function(){
-				alert("Not yet implement " +$(this).data("email"));
+				///alert("Not yet implement " +$(this).data("email"));
+				user.updateResendEmailCount($(this).data("email"));
 			});
+			
+			user.updateResendEmailCount = function(email){
+				KA.createProgressBarWithPopup();
+				frmData = {
+// 						"subject"	: "Activate Your Khmer Academy Accoun",
+// 						"from"		: "string",
+						"sendTo"	:  email.trim()
+// 						"body"		: "test"
+				};
+				$.ajax({ 
+				    url:  "${pageContext.request.contextPath}/rest/email/send",
+				    type: "POST",
+				    data: JSON.stringify(frmData),
+				    beforeSend: function(xhr) {
+	                    xhr.setRequestHeader("Accept", "application/json");
+	                    xhr.setRequestHeader("Content-Type", "application/json");
+	                },
+				    success: function(data) { 
+						console.log(data);
+				    	KA.destroyProgressBarWithPopup();
+				    },
+				    error:function(data,status,er) { 
+				    	KA.destroyProgressBarWithPopup();
+				        console.log("error: "+data+" status: "+status+" er:"+er);
+				    }
+				});
+			};
 			
 			
 		});
 		</script>
+
+ 					  
 
 </body>
 </html>
