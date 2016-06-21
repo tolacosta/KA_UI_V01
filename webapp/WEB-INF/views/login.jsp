@@ -112,6 +112,18 @@
 					                            <a href="${pageContext.request.contextPath}/register" class="btSignUp00000"><spring:message code="lp_create_acc"/></a>
 					                        </div>
 					                    </div>
+					                    
+					                    
+					                    <div class="form-group " >
+							                        <div class="col-lg-12" style="margin-top:30px">
+							                        	<label>
+							                        			<span style="color:red;font-size: 15px;">* ប្រសិនបើអ្នកមានបញ្ហាចំពោះការ Login ឬ  Register សូមលោកអ្នកធ្វើតាមការណែនាំដែលមាននៅក្នុង ឯកសារនេះ ឬ ទំនាក់ទំនងមកកាន់ក្រុមរបស់យើងតាមរយៈ​ 
+							                        									<br> ទូរស័ព្ទលេខ : 016 747 264, 093 982 898,​ 016 600 701 
+							                        									<br> អ៊ីមែល : tolapheng99@gmail.com  ,  pirangphan@gmail.com , yinkokpheng@gmail.com 
+							                        			</span>
+							                        	</label>
+							                        </div>
+							             </div>
 								  
 								</form>
 								<hr>

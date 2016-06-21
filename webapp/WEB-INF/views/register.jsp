@@ -134,12 +134,28 @@
 					                        </div>
 					                    </div>
 					                    
+					                    
+					                    <div class="form-group " >
+							                        <div class="col-lg-12" style="margin-top:30px">
+							                        	<label>
+							                        			<span style="color:red;font-size: 15px;">* ប្រសិនបើអ្នកមានបញ្ហាចំពោះការ Login ឬ  Register សូមលោកអ្នកធ្វើតាមការណែនាំដែលមាននៅក្នុង <a href="https://docs.google.com/document/d/1B-izjlQdc5WP688hHYvDJkqHIwYlWn68IgXhhAsoCN0/edit" target="_blank">ឯកសារនេះ</a> ឬ ទំនាក់ទំនងមកកាន់ក្រុមរបស់យើងតាមរយៈ​ 
+							                        									<br> ទូរស័ព្ទលេខ : 016 747 264, 093 982 898,​ 016 600 701 
+							                        									<br> អ៊ីមែល : tolapheng99@gmail.com  ,  pirangphan@gmail.com , yinkokpheng@gmail.com 
+							                        			</span>
+							                        	</label>
+							                        </div>
+							             </div>
+					                    
 					            </form>
 								<hr>
 								
 								
 							</div><!-- /.the-box .bg-danger .no-border-->
 						</div>
+						
+						
+						
+						
 						
 						
 						

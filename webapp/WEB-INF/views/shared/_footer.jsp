@@ -469,7 +469,7 @@ Placed at the end of the document so the pages load faster
 				$("#frmLogin").submit(function(e){
            		
 	         		  e.preventDefault(); // alert($(this).serialize());
-	         		  frmData = { ka_username : $("#ka_email").val(),
+	         		  frmData = { ka_username : $("#ka_email").val().replace(/\s/g, ''),
 	         				  	  ka_password : $("#ka_password").val()
 	         				     }; 
 	         		 // alert( JSON.stringify(frmData) + "   "+$("#ka_password").val());
@@ -640,14 +640,14 @@ Placed at the end of the document so the pages load faster
 								   '</div>');
 	         			  return;
 	         		  }
-	         		  frmData = { email : $("#email").val(),
+	         		  frmData = { email : $("#email").val().replace(/\s/g, ''),
 	         				 	  username : $("#username").val(),
 	         				  	  password : $("#password").val(),
 	         				  	  universityId : $("#getUniversity").val(),
 	         				  	  departmentId : $("#getDepartment").val(),
 	         				  	  gender : $("#getGender").val()
 	         		  }; 
-	         		  console.log(frmData);
+	         		  console.log(frmData); return;
 	         		  KA.createProgressBar();
 	         		  $.ajax({
 		    	            url: "${pageContext.request.contextPath}/rest/signup",
@@ -694,7 +694,7 @@ Placed at the end of the document so the pages load faster
 		    	            		KA.destroyProgressBar();
 		    	            	}else{
 		    	            		// Register success
-		    	            		email =  $("#email").val();
+		    	            		email =  $("#email").val().replace(/\s/g, '');
 		    	            		
 		    	            		$("#message-re").replaceWith('<div id="message-re" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
 				   		                       	   /* '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 

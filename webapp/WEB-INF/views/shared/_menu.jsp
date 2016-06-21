@@ -16,7 +16,7 @@
 	
 		<!-- Begin logo -->
 		<div class="logo">
-			<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/assets/img/khmeracademy.png" class="img-responsive" alt="Khmer Academy"></a>
+			<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/assets/img/khmeracademy-(3).png" class="img-responsive" alt="Khmer Academy"></a>
 		</div><!-- /.logo -->
 		<!-- End logo -->
 		
@@ -87,6 +87,10 @@
 				</ul>
 			</li>
 			
+			<li class="parent">
+				<a href="${pageContext.request.contextPath}/guide"><spring:message code="m_guide"/></a>
+			</li> 
+			
 			<%-- <li class="parent" >
 					 <a href="${pageContext.request.contextPath}/about">
 						   <spring:message code="m_about"/>
@@ -132,7 +136,15 @@
 			</sec:authorize>
 			<sec:authorize access="isAnonymous()">
 				<li class="parent">
-					<a href="${pageContext.request.contextPath}/login" class="btLogin9999"><spring:message code="m_login"/></a>
+					<a href="${pageContext.request.contextPath}/login" class="btLogin9999"><spring:message code="m_account"/></a>
+					<ul class="sub-menus">
+						<li class="sub-list">
+							<a href="${pageContext.request.contextPath}/login" ><spring:message code="m_login2"/></a>
+						</li>
+						<li class="sub-list">
+							<a href="${pageContext.request.contextPath}/register" ><spring:message code="m_create"/></a>
+						</li>
+					</ul>
 				</li>
 			</sec:authorize>
 			<li class="parent" style="width: 53px;" >

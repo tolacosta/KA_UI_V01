@@ -97,6 +97,8 @@ public class KASecurityWebConfiguration extends WebSecurityConfigurerAdapter{
 			.permitAll();
 		http.csrf().disable();
 		http.exceptionHandling().accessDeniedPage("/accessDenied");
+		
+		http.headers().frameOptions().disable();
 	}
 
 	@Bean

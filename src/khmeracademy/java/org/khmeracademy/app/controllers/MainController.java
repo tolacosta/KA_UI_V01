@@ -116,6 +116,11 @@ public class MainController {
 		
 	}
 	
+	@RequestMapping(value="/guide" , method =  RequestMethod.GET)
+	public String guide(ModelMap m){
+		return "guide/index";
+	}
+	
 	
 	
 }
