@@ -1,13 +1,11 @@
 window.fbAsyncInit = function() {
 			FB.init({
-//			      appId      : '733594286732881', // KSHRD
-//			      version    : 'v2.1' , 
 			      
-			       appId: 157712197964057 , // KhmerAcademy
-			       version    : 'v2.6' , // KhmerAcademy
+			       //appId: 157712197964057 , // KhmerAcademy
+			       //version    : 'v2.6' , // KhmerAcademy
 				
-//			       appId: 793854937411804 , // Khmer Academy
-//			       version    : 'v2.6' , // Khmer Academy
+					appId: 169900766745299,
+					version: 'v2.6',
 			      
 			      status : true, // check login status
 			      cookie : true, // enable cookies to allow the server to access the session
@@ -27,7 +25,7 @@ window.fbAsyncInit = function() {
 			
 			FB.Event.subscribe('auth.authResponseChange', function(response){
 			 	 if (response.status === 'connected'){
-			 		swal({   title: "Connecting with your facebook Account!",   text: "This alert will close in 5 seconds.",   timer: 5000,   showConfirmButton: false });
+			 		
 //			 		alert("Connected to Facebook");
 			  		//document.getElementById("message").innerHTML +=  "<br>Connected to Facebook";
 			  		//SUCCESS
@@ -55,7 +53,8 @@ window.fbAsyncInit = function() {
 				   var fbemail ="";
 				   var fbprofileimage = "";
 				   FB.api('/me?fields=id,email,name,gender', function(response) {
-					   
+				   		swal({   title: "Connecting with your facebook Account!",   text: "This alert will close in 5 seconds.",   timer: 5000,   showConfirmButton: false });
+
 					   fbname = response.name;
 					   fbemail = response.email;
 					   fbprofileimage = response.id;
