@@ -39,7 +39,9 @@
 									<strong class="alert-link"><spring:message code="rp_sign_up_with_facebook"/></strong>
 								</div>
 								
-								<button onclick="Login()" style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook"></i> Facebook</button>
+								<button id="btFacebook" onclick="Login()" style="background:#4B66A0;border-color: #4B66A0;color: #fff;" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook"></i> Facebook</button>
+								
+								<div style="display:none" id="fb-loading" class="loading text-center" ><img src="${pageContext.request.contextPath}/resources/assets/img/loading.gif"></div>
 								
 									
 							</div><!-- /.the-box .bg-danger .no-border-->
@@ -50,10 +52,16 @@
 							<div class="the-box bg-default no-border">
 							
 								<div class="alert alert-default  square fade in alert-dismissable">
-									<strong class="alert-link"><spring:message code="rp_sign_up_ka"/></strong>
+									<strong class="alert-link"><spring:message code="rp_sign_up_ka"/>
+											
+											<span onclick="myFunction()" style="cursor:pointer;color:red;font-size: 15px;">
+							                        				 * <spring:message code="m_guide"/>
+							                        			</span>
+									
+									</strong>
 								</div>
 							
-								
+							
 
 								
 								
@@ -135,16 +143,7 @@
 					                    </div>
 					                    
 					                    
-					                    <div class="form-group " >
-							                        <div class="col-lg-12" style="margin-top:30px">
-							                        	<label>
-							                        			<span style="color:red;font-size: 15px;">* ប្រសិនបើអ្នកមានបញ្ហាចំពោះការ Login ឬ  Register សូមលោកអ្នកធ្វើតាមការណែនាំដែលមាននៅក្នុង <a href="https://docs.google.com/document/d/1B-izjlQdc5WP688hHYvDJkqHIwYlWn68IgXhhAsoCN0/edit" target="_blank">ឯកសារនេះ</a> ឬ ទំនាក់ទំនងមកកាន់ក្រុមរបស់យើងតាមរយៈ​ 
-							                        									<br> ទូរស័ព្ទលេខ : 016 747 264, 093 982 898,​ 016 600 701 
-							                        									<br> អ៊ីមែល : tolapheng99@gmail.com  ,  pirangphan@gmail.com , yinkokpheng@gmail.com 
-							                        			</span>
-							                        	</label>
-							                        </div>
-							             </div>
+					                    
 					                    
 					            </form>
 								<hr>
@@ -206,8 +205,15 @@
 // 				alert("  tola tola   tola  ".replace(/ /g, ''));
 				   
 		  });
+		  
+		  	function myFunction() {
+			    var myWindow = window.open("", "MsgWindow", "width=1000,height=950");
+			    myWindow.document.write('<iframe height="600" width="100%" src="https://drive.google.com/file/d/0BxAxFWzKOXf1ZFp6c1d2TUpsbEE/preview"></iframe><iframe width="100%" height="400" src="https://www.youtube.com/embed/tt5f4ZtnJgk" frameborder="0" allowfullscreen></iframe>');
+			}
+		  
 		  </script>
 		  
+		 
 		  
 		
 		

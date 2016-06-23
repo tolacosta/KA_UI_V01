@@ -45,6 +45,10 @@ window.fbAsyncInit = function() {
 	    };
 	    
 	   	function Login(){
+	   		
+	   		$("#btFacebook").prop( "disabled", true ); 
+	   		$("#fb-loading").show();
+	   		
 	   		KA.createProgressBar();
 			FB.login(function(response) {
 			   if (response.authResponse){
@@ -53,7 +57,8 @@ window.fbAsyncInit = function() {
 				   var fbemail ="";
 				   var fbprofileimage = "";
 				   FB.api('/me?fields=id,email,name,gender', function(response) {
-				   		swal({   title: "Connecting with your facebook Account!",   text: "This alert will close in 5 seconds.",   timer: 5000,   showConfirmButton: false });
+				   		
+					   //swal({   title: "Connecting with your facebook Account!",   text: "This alert will close in 5 seconds.",   timer: 5000,   showConfirmButton: false });
 
 					   fbname = response.name;
 					   fbemail = response.email;
@@ -103,7 +108,12 @@ window.fbAsyncInit = function() {
 									userLogin(data);
 								}else{
 									KA.destroyProgressBar();
-									alert("OOP! " + data.MESSAGE );
+									$("#btFacebook").prop( "disabled", false ); 
+							   		$("#fb-loading").hide();
+									alert("OOP! " + data.MESSAGE +". Sorry we cannot access your email from facebook. Please register with your email!");
+									//setTimeout(function(){
+				            			location.href = path+"/register";
+				            		//}, 200 );
 									/*if(data.USER != null){
 										userLogin(data);
 									}else{

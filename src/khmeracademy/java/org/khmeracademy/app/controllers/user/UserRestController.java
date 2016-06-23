@@ -71,7 +71,7 @@ public class UserRestController {
 	@RequestMapping(value="/rest/login_with_fb" , method = RequestMethod.POST)
 	public ResponseEntity<Map<String , Object>> login_with_fb(@RequestBody FrmAddUser user){
 		HttpEntity<Object> request = new HttpEntity<Object>(user,header);
-		ResponseEntity<Map> response = rest.exchange(WSURL + "authentication/login_with_fb", HttpMethod.POST , request , Map.class) ;
+		ResponseEntity<Map> response = rest.exchange(WSURL + "authentication/v2/login_with_fb", HttpMethod.POST , request , Map.class) ;
 		return new ResponseEntity<Map<String , Object>>(response.getBody() , HttpStatus.OK);
 	}
 	
