@@ -1,11 +1,11 @@
 window.fbAsyncInit = function() {
 			FB.init({
 			      
-			       //appId: 157712197964057 , // KhmerAcademy
-			       //version    : 'v2.6' , // KhmerAcademy
+			       appId: 157712197964057 , // KhmerAcademy
+			       version    : 'v2.6' , // KhmerAcademy
 				
-					appId: 169900766745299,
-					version: 'v2.6',
+//					appId: 169900766745299,
+//					version: 'v2.6',
 			      
 			      status : true, // check login status
 			      cookie : true, // enable cookies to allow the server to access the session

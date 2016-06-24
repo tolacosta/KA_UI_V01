@@ -713,7 +713,7 @@ Placed at the end of the document so the pages load faster
 									$("#pop-re").replaceWith( '<strong style="font-size: 18px;" class="alert-link"> <spring:message code="msg_create_account_success_but_not_yet_activate"/> <a href="#resend" id="btFrmSendMailToConf" class="btn btn-primary btn-xs">Request a new message </a></p>');
 									
 									
-									$("#p-success").bPopup({modalClose: false}); 
+									$("#p-success").bPopup(/*{modalClose: false}*/); 
 									
 			    	            	KA.destroyProgressBar();
 		    	            		
