@@ -22,4 +22,9 @@ public class TutorialController {
 		model.addAttribute("cid", cid);
 		return "tutorial/single_post";
 	}
+	
+	@RequestMapping(value="/spring" , method =  RequestMethod.GET)
+	public String guide(ModelMap m){
+		return "tutorial/spring";
+	}
 }

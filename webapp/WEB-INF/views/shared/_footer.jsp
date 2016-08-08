@@ -1,4 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
 <!-- BEGIN FOOTER -->
 <footer class="">
 	<div class="container">
@@ -67,7 +68,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
-				<spring:message code="f_copy_right"/>
+				<img src="${pageContext.request.contextPath}/resources/assets/img/licensebuttons.png"/>
+				
+<%-- 				<spring:message code="f_copy_right"/> --%>
 			</div><!-- /.col-sm-5 -->
 			<%-- <div class="col-sm-6 text-right">
 				Download Mobile App
@@ -455,6 +458,10 @@ Placed at the end of the document so the pages load faster
             =============================================== */
             $(document).ready(function(){
                
+            	var continuePage = "${continuePage}";
+            	var user_id = "";
+//             	alert(continuePage);
+            	
             	
             	$(document).on('click',".btLogin", function(){ 
                 	$("#frmLogin").trigger("reset");
@@ -506,6 +513,9 @@ Placed at the end of the document so the pages load faster
 											   '<br/><a href="#" id="btFrmSendMailToConf">Request a new message!</a>'+
 							  				   '</div>'
 							  				   );
+		    	            		
+		    	            		$("#show-guide").show();
+		    	            		
 		    	            	}else{
 									$("#message").replaceWith('<div id="message" class="alert alert-success alert-bold-border square fade in alert-dismissable"> '+ 
  	            		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
@@ -513,8 +523,20 @@ Placed at the end of the document so the pages load faster
 								  				  '<strong class="alert-link"><spring:message code="msg_login_success"/></strong>'+ 
 												   '</div>');
 		    	            		setTimeout(function(){
-		    	            			location.href = data;
-		    	            		}, 500 );
+		    	            			
+		    	            			
+		    	            			var json = JSON.parse(data); 
+		    	            			console.log(json);
+		    	            			setCookie("ka_user_id", json.USER_ID, 30);
+		    	            			user_id = json.USER_ID;
+		    	            			if(continuePage == ""){
+// 		    	            				alert(data);
+		    	            				location.href =json.TARGET_URL;
+		    	            			}else{
+// 		    	            				alert(continuePage);
+		    	            				location.href = continuePage+"/auto-login?email="+user_id+"&continuePage="+continuePage;
+		    	            			}
+		    	            		}, 200 );
 		    	            		
 		    	            	}
 		    	            	
@@ -618,13 +640,26 @@ Placed at the end of the document so the pages load faster
     				});
     			};
     			
+    			$("#conf-email").keyup(function(){
+    				$(this).css("border","1px solid #d3d8de");
+    			});
+    			
+    			
     			$("#frmSignUp").submit(function(e){ 
 	         		  e.preventDefault(); // alert($(this).serialize());
 	         		 // alert($("#password").val() +" "+ $("#repassword").val());
 	         		 
+	         		 if( $("#email").val() != $("#conf-email").val()){
+	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
+  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
+				  				   '<strong class="alert-link"><spring:message code="msg_re_enter_email"/></strong>'+ 
+								   '</div>');
+	         			$("#conf-email").css("border","1px solid red");
+	         			  return;
+	         		  }
 	         		
 	         		 
-	         		  if( $("#password").val().length < 6 || $("#repassword").val().length < 6){
+	         		  if( $("#password").val().length < 6 ){
 	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
 	  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
 					  				  /*  '<strong class="alert-link">Password must be at least 6 characters!</strong>'+  */
@@ -632,20 +667,21 @@ Placed at the end of the document so the pages load faster
 									   '</div>');
 		         			  return; 
 	         		  }
-	         		  if( $("#password").val() != $("#repassword").val()){
+	         		 /* if( $("#password").val() != $("#repassword").val()){
 	         			 $("#message-re").replaceWith('<div id="message-re" class="alert alert-danger alert-bold-border square fade in alert-dismissable"> '+ 
-  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
-				  				  /*  '<strong class="alert-link">Passwords do not match!</strong>'+  */
+  		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+
 				  				   '<strong class="alert-link"><spring:message code="msg_passwords_donnot_match"/></strong>'+ 
 								   '</div>');
 	         			  return;
 	         		  }
+	         		 */
 	         		  frmData = { email : $("#email").val().replace(/\s/g, ''),
 	         				 	  username : $("#username").val(),
 	         				  	  password : $("#password").val(),
 	         				  	  universityId : $("#getUniversity").val(),
 	         				  	  departmentId : $("#getDepartment").val(),
-	         				  	  gender : $("#getGender").val()
+	         				  	  gender : $("#getGender").val(),
+	         				  	  type : 0
 	         		  }; 
 	         		  console.log(frmData); 
 	         		  KA.createProgressBar();
@@ -893,6 +929,21 @@ Placed at the end of the document so the pages load faster
    		 });
 		</script>
 		
-								
+		
+		 <sec:authorize access="isAnonymous()">
+			<script type="text/javascript"> 
+				path = "${pageContext.request.contextPath}";
+				checkCookie(path);
+			</script>
+		</sec:authorize>	
+		<sec:authorize access="isAuthenticated()">
+			<script type="text/javascript"> 
+			var continuePage = "${continuePage}";
+			if(continuePage != ""){
+// 		    	  alert(continuePage);
+		    	  location.href = continuePage+"/auto-login?email="+user_id+"&continuePage="+continuePage;
+		    }
+			</script>
+		</sec:authorize>					
 								
    		    

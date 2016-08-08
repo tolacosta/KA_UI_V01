@@ -32,6 +32,17 @@
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/css/smoke.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/css/sweetalert2.css">
+
+
+ 
+ 		<meta content="http://www.khmeracademy.org/" property="og:url" />
+		<meta content="website" property="og:type" />
+		<meta content="The First E-Learning platform in Cambodia" property="og:title" />
+		<meta content="E-learning is one of the useful features of Khmer Academy that has many kinds of videos in Khmer language. Cambodian people can access all videos in Khmer Academy free of charge, and they can learn them at any time on the internet." property="og:description" />
+		<meta content="http://www.khmeracademy.org/resources/assets/img/banner/kshrd.jpg" property="og:image" />
+		
+		
+		
 </head>
 
 <body class="tooltips no-padding" style="background:#EEEFF1 !important" >

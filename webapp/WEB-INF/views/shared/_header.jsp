@@ -51,5 +51,7 @@
 </style>
 
 	
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/script/ka_login.js"></script>	
+
 	
 	

@@ -1,6 +1,8 @@
 package org.khmeracademy.app.configurations.security;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +17,8 @@ import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.stereotype.Component;
 
+import com.google.gson.Gson;
+
 @Component("ajaxAuthenticationSuccessHandler")
 public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -24,13 +28,12 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication auth)
 			throws IOException, ServletException {
 	
-//			Map<String , Object> map = new HashMap<String , Object>();
-//			map.put("APIUser", getAPIUser());
-//			map.put("targetUrl", determineTargetUrl(auth));
+			Map<String , Object> map = new HashMap<String , Object>();
+			
 //			
-//			String json = new Gson().toJson(map);
+			
 		
-		
+			
 			
 		
 			SavedRequest savedRequest = requestCache.getRequest(request, response);
@@ -46,9 +49,13 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
 				targetUrl = "false";
 				SecurityContextHolder.getContext().setAuthentication(null);
 			}
-
-
-			response.getWriter().print(targetUrl);
+				
+			map.put("TARGET_URL", targetUrl);
+			map.put("USER_ID", user.getUserId());
+			
+			String json = new Gson().toJson(map);
+			
+			response.getWriter().print(json);
 	        response.getWriter().flush();
 	        
 	}

@@ -130,7 +130,7 @@
 									<th>Registered Date</th>
 									<th>Role</th>
 									<th>Action</th>
-									<th>Re-Sent</th>
+									<th>Device</th>
 									<!-- <th>Action</th> -->
 								</tr>
 							</thead>
@@ -343,7 +343,7 @@
 						<i  id="inactive" data-email="{{= email }}" data-toggle="tooltip" data-original-title="This account is activated. Click to inactive!"   data-status="false" class="fa fa-check icon-circle icon-xs icon-success"></i>  
 					{{/if}}
 				</td>
-				<td><!-- Resend Count -->{{if confirmed == false }} {{= point }} {{/if}}</td>
+				<td><!-- Sign up with -->{{if scTwitterId == '0' }} WEB {{/if}} {{if scTwitterId == '1' }} MOBILE {{/if}} {{if scTwitterId == '2' }} FB {{/if}} </td>
 			</tr>
    		</script>   
    		
@@ -459,7 +459,7 @@
 	                data: JSON.stringify(filterData),
 				    success: function(data) { 
 				    	
-				    	
+				    	console.log(data);
 				    	
 						if(data.RES_DATA.length>0){
 							

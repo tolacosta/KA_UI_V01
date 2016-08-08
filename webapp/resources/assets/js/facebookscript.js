@@ -1,11 +1,11 @@
 window.fbAsyncInit = function() {
 			FB.init({
 			      
-			       appId: 157712197964057 , // KhmerAcademy
-			       version    : 'v2.6' , // KhmerAcademy
+//			       appId: 157712197964057 , // KhmerAcademy
+//			       version    : 'v2.6' , // KhmerAcademy
 				
-//					appId: 169900766745299,
-//					version: 'v2.6',
+					appId: 776306919082812,  /// TEST
+					version: 'v2.1',
 			      
 			      status : true, // check login status
 			      cookie : true, // enable cookies to allow the server to access the session
@@ -56,7 +56,7 @@ window.fbAsyncInit = function() {
 				   var fbname = "";
 				   var fbemail ="";
 				   var fbprofileimage = "";
-				   FB.api('/me?fields=id,email,name,gender', function(response) {
+				   FB.api('/me?fields=id,email,name,gender,birthday', function(response) {
 				   		
 					   //swal({   title: "Connecting with your facebook Account!",   text: "This alert will close in 5 seconds.",   timer: 5000,   showConfirmButton: false });
 
@@ -65,6 +65,8 @@ window.fbAsyncInit = function() {
 					   fbprofileimage = response.id;
 					   fbId =  response.id;
 					   fbGender = response.gender;
+					   fbDateofbirth = new Date(response.birthday);
+					   //alert(response.birthday);
 					   //alert(response.birthday + " | " +  response.gender + " | " + response.age_range);
 					   
 //					   alert(fbemail + " | " + fbprofileimage );
@@ -83,7 +85,9 @@ window.fbAsyncInit = function() {
 	         				  	  scID : fbId,
 	         				  	  scType : 2,
 	         				  	  imageUrl : "http://graph.facebook.com/"+fbId+"/picture?type=large",
-	         				  	  gender : fbGender
+	         				  	  gender : fbGender,
+								  dateofbirth : fbDateofbirth,
+								  type : 0
 					   };
 					   console.log(frmData);
 					   $.ajax({
@@ -113,6 +117,8 @@ window.fbAsyncInit = function() {
 									alert("OOP! " + data.MESSAGE +". Sorry we cannot access your email from facebook. Please register with your email!");
 									//setTimeout(function(){
 				            			location.href = path+"/register";
+				            			
+				            			
 				            		//}, 200 );
 									/*if(data.USER != null){
 										userLogin(data);
@@ -154,7 +160,7 @@ window.fbAsyncInit = function() {
 	  			}else{
 	  				console.log('User cancelled login or did not fully authorize.');
 	   			}
-			 },{scope: 'email,public_profile', return_scopes: true});
+			 },{scope: 'email,public_profile,user_birthday', return_scopes: true});
 			
 			
 			
@@ -190,6 +196,7 @@ window.fbAsyncInit = function() {
 			frmData = { ka_username : data.USER.email,
 				  	  ka_password : data.USER.password
 				     }; 
+			var email = data.USER.email;
 			$.ajax({
 	            url: path+"/login",
 	            type: "POST",
@@ -212,8 +219,35 @@ window.fbAsyncInit = function() {
    		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
 					  				   '<strong class="alert-link">Login successfully!</strong>'+ 
 									   '</div>');
+	            		/*setTimeout(function(){
+	            			
+//	            			alert(email);
+	            			setCookie("ka_user_id", email, 30);
+	            			
+	            			if(continuePage == ""){
+//	            				alert(data);
+	            				location.href =data;
+	            			}else{
+//	            				alert(continuePage);
+	            				location.href = continuePage+"/auto-login?email="+email+"&continuePage="+continuePage;
+	            			}
+	            			
+//	            			location.href = data;
+	            		}, 200 );
+	            		
+	            		*/
 	            		setTimeout(function(){
-	            			location.href = data;
+	            			var json = JSON.parse(data); 
+	            			console.log(json);
+	            			setCookie("ka_user_id", json.USER_ID, 30);
+	            			user_id = json.USER_ID;
+	            			if(continuePage == ""){
+// 	            				alert(data);
+	            				location.href =json.TARGET_URL;
+	            			}else{
+// 	            				alert(continuePage);
+	            				location.href = continuePage+"/auto-login?email="+user_id+"&continuePage="+continuePage;
+	            			}
 	            		}, 200 );
 	            		
 	            	}

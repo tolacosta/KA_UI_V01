@@ -89,32 +89,39 @@
 																				                     <div class="col-lg-12">
 																						                    <div class="form-group ">
 																						                        <div class="col-lg-12">
-																						                        	<label><spring:message code="rp_email"/> <span style="color:red">* សូមប្រើប្រាស់អ៊ីមែលពិតប្រាកដរបស់ដើម្បីធ្វើកាចុះឈ្មោះ</span></label>
-																						                            <input class="form-control rounded bold-border" type="email" required="required" oninvalid="this.setCustomValidity('The email is incorrect!')" oninput="setCustomValidity('')" name="email" id="email" placeholder="">
+																						                        	<label><spring:message code="rp_email"/> <span style="color:red">* សូមប្រើប្រាស់អ៊ីមែលពិតប្រាកដរបស់អ្នកដើម្បីចុះឈ្មោះ</span></label>
+																						                            <input class="form-control rounded bold-border" type="email" required="required" oninvalid="this.setCustomValidity('The email is incorrect!')" oninput="setCustomValidity('')" name="email" id="email" placeholder="Enter your real email">
+																						                        </div>
+																						                    </div>
+																						                    
+																						                    <div class="form-group ">
+																						                        <div class="col-lg-12">
+																						                        	<label><spring:message code="rp_conf_email"/> </label>
+																						                            <input class="form-control rounded bold-border" type="email" required="required" oninvalid="this.setCustomValidity('The email is incorrect!')" oninput="setCustomValidity('')" name="conf-email" id="conf-email" placeholder="Re-enter your real email">
 																						                        </div>
 																						                    </div>
 																						                    
 																						                    <div class="form-group ">
 																						                        <div class="col-lg-12">
 																						                        	<label><spring:message code="rp_username"/> <span style="color:red">*</span></label>
-																						                            <input class="form-control rounded bold-border" type="text" required="required" oninvalid="this.setCustomValidity('Username is required!')" oninput="setCustomValidity('')" name="username" id="username" placeholder="">
+																						                            <input class="form-control rounded bold-border" type="text" required="required" oninvalid="this.setCustomValidity('Username is required!')" oninput="setCustomValidity('')" name="username" id="username" placeholder="Username">
 																						                        </div>
 																						                    </div>
 																						
 																						                    <div class="form-group">
 																						                        <div class="col-lg-12">
 																						                        	<label><spring:message code="rp_pwd"/> <span style="color:red">*</span></label>
-																						                            <input class="form-control rounded bold-border" type="password" required="required" oninvalid="this.setCustomValidity('The password is required!')" oninput="setCustomValidity('')" name="password"  id="password" placeholder="">
+																						                            <input class="form-control rounded bold-border" type="password" required="required" oninvalid="this.setCustomValidity('The password is required!')" oninput="setCustomValidity('')" name="password"  id="password" placeholder="Password">
 																						                        </div>
 																						                    </div>
-																						                    
+																						                    <%-- 
 																						                    <div class="form-group">
 																						                        <div class="col-lg-12">
 																						                        	<label><spring:message code="rp_conf_pwd"/> <span style="color:red">*</span></label>
 																						                            <input class="form-control rounded bold-border" type="password" required="required" oninvalid="this.setCustomValidity('The Confirm Password is required!')" oninput="setCustomValidity('')" name="repassword"  id="repassword" placeholder="">
 																						                        </div>
 																						                    </div>
-																						                
+																						                 	--%>
 																						                    <div class="form-group">
 																						                    	<div class="col-lg-12">
 																						                    			<label>ភេទ<span style="color:red">*</span></label>
@@ -323,6 +330,7 @@
 		
 		<!-- End My Contend -->
 		<script src="${pageContext.request.contextPath}/resources/assets/js/sweetalert2.min.js"></script>
+		<script type="text/javascript">var continuePage = "${continuePage}";</script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/facebookscript.js"></script>
 		<jsp:include page="shared/_footer.jsp" />
 		

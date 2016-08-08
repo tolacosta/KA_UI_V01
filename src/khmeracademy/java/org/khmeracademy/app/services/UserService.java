@@ -5,5 +5,6 @@ import org.khmeracademy.app.entities.User;
 public interface UserService {
 	
 	public User findUserByEmail(String email);
+	public User findUserByUserId(String userId);
 
 }

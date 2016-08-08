@@ -104,6 +104,19 @@
 					</ul>
 			</li> --%>
 				
+			<%-- <sec:authorize access="isAuthenticated()">
+			   <li class="parent">
+					<a href="${pageContext.request.contextPath}/login" class="btLogin9999">TTTTTTTTT<spring:message code="m_account"/></a>
+					<ul class="sub-menus">
+						<li class="sub-list">
+							<a href="${pageContext.request.contextPath}/login" ><spring:message code="m_login2"/></a>
+						</li>
+						<li class="sub-list">
+							<a href="${pageContext.request.contextPath}/register" ><spring:message code="m_create"/></a>
+						</li>
+					</ul>
+				</li>
+			</sec:authorize>	 --%>
 			<sec:authorize access="isAuthenticated()">
 <!-- 				<li class="parent"> -->
 <%-- 					<img style="padding-top: 12px;" width="50px" src="${pageContext.request.contextPath}/resources/assets/img/avatar/avatar-1.jpg" class="avatar img-circle" alt="Avatar"> --%>
