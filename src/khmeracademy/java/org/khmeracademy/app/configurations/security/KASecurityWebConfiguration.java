@@ -100,6 +100,8 @@ public class KASecurityWebConfiguration extends WebSecurityConfigurerAdapter{
 		http.exceptionHandling().accessDeniedPage("/accessDenied");
 		
 		http.headers().frameOptions().disable();
+		
+		
 	}
 
 	@Bean

@@ -1,5 +1,11 @@
 package org.khmeracademy.app.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +24,15 @@ public class AuthenticationController {
 	@RequestMapping(value = "/register")
 	public String register() {
 		return "register";
+	}
+	
+	@RequestMapping(value = "/api/logout", method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> apiLogout() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		SecurityContextHolder.getContext().setAuthentication(null);
+		map.put("STATUS", true);
+		map.put("MESSAGE", "Logout successfully!");
+		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
 	
 	/*

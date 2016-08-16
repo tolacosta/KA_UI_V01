@@ -30,7 +30,7 @@ public class AutoLoginController {
 	@RequestMapping(value = "/auto-login" , method= RequestMethod.GET)
 	public String autoLogin(@RequestParam("email") String email , @RequestParam("continuePage") String continuePage) {
 		System.out.println(email);
-		User user = userService.findUserByUserId("MTA0");
+		User user = userService.findUserByUserId(email);
 
 		Authentication authentication = new UsernamePasswordAuthenticationToken(user, user.getPassword(), user.getAuthorities());
 

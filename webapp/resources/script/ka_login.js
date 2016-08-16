@@ -3,10 +3,9 @@ function setCookie(cname, cvalue) {
 	var d = new Date();
 	d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
 	var expires = "expires=" + d.toGMTString();
-	document.cookie = cname + "=" + cvalue + "; " + expires;
-//	alert(expires);
+	document.cookie = cname + "=" + cvalue + "; " + expires+ ";domain=khmeracademy.org;";
+	alert(expires);
 }
-
 function getCookie(cname) {
 	var name = cname + "=";
 	var ca = document.cookie.split(';');

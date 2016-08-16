@@ -219,26 +219,9 @@ window.fbAsyncInit = function() {
    		                       '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>'+ 
 					  				   '<strong class="alert-link">Login successfully!</strong>'+ 
 									   '</div>');
-	            		/*setTimeout(function(){
-	            			
-//	            			alert(email);
-	            			setCookie("ka_user_id", email, 30);
-	            			
-	            			if(continuePage == ""){
-//	            				alert(data);
-	            				location.href =data;
-	            			}else{
-//	            				alert(continuePage);
-	            				location.href = continuePage+"/auto-login?email="+email+"&continuePage="+continuePage;
-	            			}
-	            			
-//	            			location.href = data;
-	            		}, 200 );
-	            		
-	            		*/
 	            		setTimeout(function(){
 	            			var json = JSON.parse(data); 
-	            			console.log(json);
+	            			console.log(json); 
 	            			setCookie("ka_user_id", json.USER_ID, 30);
 	            			user_id = json.USER_ID;
 	            			if(continuePage == ""){

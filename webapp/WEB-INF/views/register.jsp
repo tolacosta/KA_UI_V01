@@ -327,10 +327,9 @@
 		
 		 
 		
-		
+		<script type="text/javascript">var continuePage = "${continuePage}";</script>
 		<!-- End My Contend -->
 		<script src="${pageContext.request.contextPath}/resources/assets/js/sweetalert2.min.js"></script>
-		<script type="text/javascript">var continuePage = "${continuePage}";</script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/facebookscript.js"></script>
 		<jsp:include page="shared/_footer.jsp" />
 		

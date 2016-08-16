@@ -143,7 +143,7 @@
 					 </a>
 					 <ul class="sub-menus">
 					 	<li class="sub-list"><a href="${pageContext.request.contextPath}/user/profile"><spring:message code="m_profile"/></a></li>
-						<li class="sub-list"><a href="${pageContext.request.contextPath}/logout"><spring:message code="m_logout"/></a></li>
+						<li class="sub-list"><a id="logout"  href="${pageContext.request.contextPath}/logout"><spring:message code="m_logout"/></a></li>
 					</ul>
 				</li>
 			</sec:authorize>
@@ -179,7 +179,22 @@
 
 
 
-		
-		
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$(document).on('click','#logout',function(){
+				deleteCookie("ka_user_id","");
+				location.href = "http://www.khmeracademy.org/logout";
+						/*
+						$.ajax({
+ 						url : "http://www.khmeracademy.org/api/logout",
+ 						method: "GET",
+ 						success: function(data){   console.log(data);          },
+		    	         	error: function(data){
+		    	         		console.log(data);
+		    				}
+		    	        });  */
+			});
+		});
+		</script>
 		
 		
