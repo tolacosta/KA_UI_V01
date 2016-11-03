@@ -30,12 +30,6 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
 	
 			Map<String , Object> map = new HashMap<String , Object>();
 			
-//			
-			
-		
-			
-			
-		
 			SavedRequest savedRequest = requestCache.getRequest(request, response);
 			String targetUrl = request.getContextPath()+"/";
 			if (savedRequest != null) {

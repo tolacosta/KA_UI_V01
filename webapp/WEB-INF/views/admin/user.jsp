@@ -92,9 +92,22 @@
 								</select>
 							</div>
 							<div class="col-sm-2">
-								<select  class="form-control usertypeLoad" id="sUserRole">
+								<!-- <select  class="form-control usertypeLoad" id="sUserRole">
 										<option value="">User Role</option>
+								</select> -->
+								
+								
+								<select class="form-control usertypeLoad" id="sUserRole">
+									<option value="">User Role</option>
+									<option value="Nw==">Company </option>
+									<option value="Ng==">Employee </option>
+									<option value="NQ==">Admin </option>
+									<option value="NA==">Moderator </option>
+									<option value="Mw==">Editor </option>
+									<option value="Mg==">Subscriber </option>
+									<option value="MQ==">Visitor </option>
 								</select>
+								
 							</div>
 							
 							<div class="col-sm-2"></div>
@@ -343,7 +356,7 @@
 						<i  id="inactive" data-email="{{= email }}" data-toggle="tooltip" data-original-title="This account is activated. Click to inactive!"   data-status="false" class="fa fa-check icon-circle icon-xs icon-success"></i>  
 					{{/if}}
 				</td>
-				<td><!-- Sign up with -->{{if scTwitterId == '0' }} WEB {{/if}} {{if scTwitterId == '1' }} MOBILE {{/if}} {{if scTwitterId == '2' }} FB {{/if}} </td>
+				<td><!-- Sign up with -->{{if scTwitterId == '0' }} WEB {{/if}} {{if scTwitterId == '1' }} iOS {{/if}} {{if scTwitterId == '2' }} AOS {{/if}} </td>
 			</tr>
    		</script>   
    		
@@ -475,7 +488,7 @@
 							
 							$("#totalrecord").text(data.PAGINATION.totalCount+ " Users");
 							//to add to user type to select
-							user.usertype();
+// 							user.usertype();
 							
 							//set onchange event to class usertype after the element of class usertype
 							$(".usertype").change(changeusertype); 
@@ -923,11 +936,11 @@
 			
 			
 			// To run to list content
-			//user.listUser(1);
+// 			user.listUser(1);
 			user.searchuser(1);
-			user.listuniversity();
-			user.listdepartment();
-			user.usertypeOnLoad();
+// 			user.listuniversity();
+// 			user.listdepartment();
+// 			user.usertypeOnLoad();
 						
 			// Show Form Add User Popup
 			$("#showFrmAddUser").click(function(){

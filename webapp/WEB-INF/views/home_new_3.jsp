@@ -265,7 +265,7 @@
 										<!--  End E-Learning -->
 										
 										<!--  Tutorial -->
-										<div class="panel panel-primary panel-square panel-no-border">
+										<%-- <div class="panel panel-primary panel-square panel-no-border">
 										
 											  <div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
 													<a href="${pageContext.request.contextPath}/tutorial" target="_blank" style=" float: left;color: white;"><h3 class="panel-title"><spring:message code="m_tutorial"/></h3></a>
@@ -277,7 +277,7 @@
 											  	<div class="loading text-center" ><img src="${pageContext.request.contextPath}/resources/assets/img/loading.gif"></div>
 											  	
 												<div class="list-group success square no-side-border" id="listcategory">
-													  <%-- <%for(int i=0;i<12;i++) {%>
+													  <%for(int i=0;i<12;i++) {%>
 													  <div class="col-sm-3" style="width: 190px;    padding-right: 0px;">      
 													  	<div class="the-box no-border full store-item text-center"> 
 													  	     <div class="the-box bg-info no-margin no-border item-des">        
@@ -285,14 +285,14 @@
 													  	     </div>        
 													  	  </div>           
 													  </div>
-													  <% } %> --%>
+													  <% } %>
 												</div>
 												
 																				
 																					
 											  </div><!-- /.panel-body -->
 											
-											</div>
+											</div> --%>
 											<!-- End Tutorial -->
 											
 											
@@ -435,7 +435,7 @@
 											 
 											 
 											 <!-- Website Hub -->
-											 <div class="panel panel-primary panel-square panel-no-border">
+											 <%-- <div class="panel panel-primary panel-square panel-no-border">
 														<div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
 															  <a href="${pageContext.request.contextPath}/website" target="_blank" style=" float: left;color: white;"><h3 class="panel-title">តំណភ្ជាប់</h3></a>
 															  <a href="${pageContext.request.contextPath}/website" target="_blank" class="btn btn-default btn-xs" id="btLoadMore" style="float: right;">ច្រើនទៀត</a>
@@ -473,7 +473,7 @@
 																					
 																						
 																					
-																						<%-- <div class="col-md-3 col-xs-6" style="height:50px;display: -webkit-box;">		
+																						<div class="col-md-3 col-xs-6" style="height:50px;display: -webkit-box;">		
 																								<div>
 																									<a href="${pageContext.request.contextPath}/elearning/playvideo?v={{= videoId }}&playlist={{= playlistId }}">
 																											<img width="40px" height="40px" src="{{= thumbnailUrl }}" alt="...">
@@ -486,7 +486,7 @@
 																												</a>   
 																										</p>              
 																								</div>
-																						</div> --%>
+																						</div>
 																						
 																					</div>
 																			</div>
@@ -548,7 +548,7 @@
 																</div>
 															</div>
 			            								
-												</div>
+												</div> --%>
 												<!--  End Website Hub -->
 												
 									</div>	
@@ -652,7 +652,7 @@
 										
 <%-- 										<img src="${pageContext.request.contextPath}/resources/uploads/advertise/shortcourse_adv.jpg" /> --%>
 										<!--  Forum -->
-											<div class="panel panel-primary panel-square panel-no-border">
+											<%-- <div class="panel panel-primary panel-square panel-no-border">
 																
 															  <div class="panel-heading" style="background:rgb(78, 156, 80);height: 40px;">
 																	<a href="${pageContext.request.contextPath}/forum" target="_blank" style=" float: left;color: white;"><h3 class="panel-title"><spring:message code="mp_forum"/></h3></a>
@@ -666,7 +666,7 @@
 																</div>	
 																
 																					
-											 </div> 	
+											 </div>  --%>	
 											<!-- End Forum -->
 											
 											<!--  Live Camera -->
@@ -981,7 +981,7 @@
 		    	var eID="getRecent";
 				showElearning = function(mainCategoryId){ 
 		    		$.ajax({
-		    			url :"${pageContext.request.contextPath}/rest/elearning/plalylistByMainCateogryWithPagin/"+mainCategoryId+"?page=1&item=10",
+		    			url :"${pageContext.request.contextPath}/rest/elearning/plalylistByMainCateogryWithPagin/"+mainCategoryId+"?page=1&item=25",
 						method: 'GET',
 						success:function(data){
 							$("#elearning_tmpl").tmpl(data.RES_DATA).appendTo("#"+eID);
@@ -1072,9 +1072,9 @@
 						success:function(data){
 							console.log(data);
 							$("#elearning_tmpl").tmpl(data.KA.LIST_COURSE).appendTo("#"+eID);
-							$("#tlistcategory_tmpl").tmpl(data.KA.LIST_CATEGORIES).appendTo("#listcategory");
-							$("#question_tmpl").tmpl(data.KA.LIST_QUESTION).appendTo("#getQuestion");
-							$("#website_tmpl").tmpl(data.KA.LIST_WEBSTIE).appendTo("#"+wID);
+// 							$("#tlistcategory_tmpl").tmpl(data.KA.LIST_CATEGORIES).appendTo("#listcategory");
+// 							$("#question_tmpl").tmpl(data.KA.LIST_QUESTION).appendTo("#getQuestion");
+// 							$("#website_tmpl").tmpl(data.KA.LIST_WEBSTIE).appendTo("#"+wID);
 							if(data.STATUS_AKN == true){
 								displayNews(data.KEY ,data.NEWS.RESPONSE_DATA);							
 							}
@@ -1091,7 +1091,7 @@
 		    	*/
 		    	
 		    	showMainPageData();
-		    	
+		    	showNews("getAKN");
 		    
 				
 			});

@@ -93,11 +93,12 @@ public class MainController {
 	public ResponseEntity<Map<String , Object>> listPlaylistsByMainCategoryWithPagin(){
 		Map<String,Object> map = new HashMap<String , Object>();
 		try{
-			HttpEntity<Object> requestAKN = new HttpEntity<Object>(aknHeaders);
-			ResponseEntity<Map> all = rest.exchange(AKNURL + "api/article/1/12/0/0/0/", HttpMethod.GET , requestAKN , Map.class) ;
-			map.put("NEWS", all.getBody());
-	        map.put("KEY", "getAKN");
-	        map.put("STATUS_AKN", true);
+//			HttpEntity<Object> requestAKN = new HttpEntity<Object>(aknHeaders);
+//			ResponseEntity<Map> all = rest.exchange(AKNURL + "api/article/1/12/0/0/0/", HttpMethod.GET , requestAKN , Map.class) ;
+//			map.put("NEWS", all.getBody());
+//	        map.put("KEY", "getAKN");
+//			map.put("STATUS_AKN", true);
+	        map.put("STATUS_AKN", false);
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("MESSAGE_AKN", "Operation failed");
